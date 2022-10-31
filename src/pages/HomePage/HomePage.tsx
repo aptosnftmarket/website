@@ -1,33 +1,31 @@
-import { Icon, IconName, Link, Typography } from '@onestaree/ui-kit'
 import classNames from 'classnames'
 
 import { scrollToElement } from '../../utils'
 import arrowDown from './arrowDown.svg'
 import styles from './HomePage.module.scss'
 
-const communityLinks: { icon: IconName; text: string; link: string }[] = [
-  { icon: 'twitter', text: 'Follow us on Twitter', link: 'https://google.com' },
-  { icon: 'telegram', text: 'Join the AptosNFT Market Telegram community', link: 'https://google.com' },
-  { icon: 'medium', text: 'Follow us on Medium', link: 'https://google.com' }
-]
+// const communityLinks: { icon: IconName; text: string; link: string }[] = [
+//   { icon: 'twitter', text: 'Follow us on Twitter', link: 'https://google.com' },
+//   { icon: 'telegram', text: 'Join the AptosNFT.Market Telegram community', link: 'https://google.com' },
+//   { icon: 'medium', text: 'Follow us on Medium', link: 'https://google.com' }
+// ]
 
 export function HomePage(): JSX.Element {
   return (
     <div className={styles.HomePage}>
       <div className={styles.Section100vh}>
-        <div className={styles.ScrollDownButton} onClick={(): void => scrollToElement('anchor', 16)}>
-          <Icon className={styles.ScrollDownButtonIcon} customIcon={arrowDown} customHeight={20} customWidth={8} />
-          <Icon
-            className={classNames(styles.IconWithWhiteBackground, '_hover')}
-            icon="toastSuccess"
-            customSize={80}
-            fillColor="white"
-            withHover
-            rounded
-          />
-        </div>
+        <h1 className={styles.Title}>
+          All <div className="_TextAccent">Aptos NFTs</div> in one place!
+        </h1>
+        <p className={styles.Description}>
+          The easiest way to evaluate, purchase
+          <br />and sell <span className="_TextAccent">Aptos NFTs</span> on all marketplaces at once.
+          <br />Building in stealth, launching soon!
+        </p>
+        <button className={classNames('_Button big', styles.OpenDapp)}>Open dApp (soon)</button>
       </div>
 
+      {/*
       <div className={styles.CommunityTitle} id="anchor">
         <Typography className={styles.H2} variant="h2">
           Join <br className="_onlyMobile" />
@@ -51,6 +49,7 @@ export function HomePage(): JSX.Element {
           </li>
         ))}
       </ul>
+      */}
     </div>
   )
 }

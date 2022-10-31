@@ -1,34 +1,48 @@
 .Header {
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   top: 0;
   right: 0;
   width: 100%;
-  padding: 2rem 4rem;
-  z-index: 1;
+  padding: 1.5rem 3rem;
+  background-color: rgba(13, 16, 15, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 99;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    left: 0;
+    height: 2rem;
+    background: #0D100F;
+    background: linear-gradient(180deg, rgba(13, 16, 15, 0.5) 0%, transparent 100%);
+  }
 
   .Logo {
     display: flex;
     align-items: center;
-    column-gap: 11px;
+    column-gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    user-select: none;
+    cursor: pointer;
   }
 
-  .HeaderButtons {
+  .HeaderLinks {
     display: flex;
-    align-items: center;
-    column-gap: 0.75rem;
-
-    .DappButton {
-      margin-left: 12px;
-    }
+    column-gap: 2rem;
   }
 }
 
 .Content {
   display: flex;
   flex: 1;
+  margin-top: (9rem - 1rem);
 }
 
 .Footer {

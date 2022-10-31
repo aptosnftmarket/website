@@ -1,6 +1,6 @@
 # aptosnft-website
 
-Landing page for AptosNFT Market app
+Landing page for [AptosNFT.Market app](https://github.com/onestaree/aptosnft-app)
 
 ## Setup
 
