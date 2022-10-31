@@ -8,12 +8,15 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Build App
-         run: yarn install && yarn build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+        run: yarn install && yarn build
+      - name: Deploy App
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ONESTARDEV }}'
           target: aptosnft-website
           projectId: onestardev
+
