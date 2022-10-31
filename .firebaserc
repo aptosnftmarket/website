@@ -5,7 +5,7 @@
   "targets": {
     "onestardev": {
       "hosting": {
-        "website": [
+        "aptosnft-website": [
           "aptosnft-website"
         ]
       }
