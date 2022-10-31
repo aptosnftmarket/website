@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:wght@400;500&family=Roboto&display=swap');
+
+body {
+  min-width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+#app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #101010;
+  overflow-x: hidden;
+}
+
+._theme {
+  display: flex;
+  flex: 1;
+}
+
+._backgroundColorTransition {
+  transition: background-color 0.25s ease;
+}
+
+._df {
+  display: flex;
+}
+
+._dfc {
+  display: flex;
+  flex-direction: column;
+}
+
+._mc {
+  margin: auto;
+}
+
+._mvc {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+._mhc {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+._tac {
+  text-align: center;
+}
+
+// Margins
+@mixin generate($prefix, $property) {
+  $sizes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // List of sizes to generate for each
+  $spacing: 0.5rem; // Spacing to multiply the sizes by
+
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 1 through length($sizes) {
+    $size: nth($sizes, $i); // Get the size for the current index
+
+    // Create the rule
+    .#{$prefix}-#{$i - 1} {
+      #{$property}: $spacing * $size;
+    }
+  }
+}
+
+@include generate(_m, margin);
+@include generate(_mt, margin-top);
+@include generate(_mr, margin-right);
+@include generate(_mb, margin-bottom);
+@include generate(_ml, margin-left);
+
+@include generate(_p, padding);
+@include generate(_pt, padding-top);
+@include generate(_pr, padding-right);
+@include generate(_pb, padding-bottom);
+@include generate(_pl, padding-left);
+
+._onlyMobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  ._onlyMobile {
+    display: block;
+  }
+}

@@ -1,0 +1,159 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+
+  .Section100vh {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .CatOutlined {
+    align-self: center;
+    height: 478px;
+    width: 452px;
+    margin-top: (44px - 20);
+    background: url('./catOutlined.svg') no-repeat center;
+    background-size: 100%;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 745px;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(16, 16, 16, 0) 28.55%, #101010 53.28%);
+    }
+  }
+
+  .CatOutlinedText {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: -95px auto 0;
+    text-align: center;
+    z-index: 1;
+
+    .H1 {
+      font-size: 90px;
+      font-weight: 600;
+      line-height: 90px;
+      letter-spacing: -0.01em;
+    }
+
+    .Soon {
+      margin-top: 13px;
+      font-size: 31px;
+      color: #E72258;
+    }
+  }
+
+  .ScrollDownButton {
+    position: relative;
+    margin: 69px auto 172px;
+
+    .ScrollDownButtonIcon {
+      position: absolute;
+      top: calc(80px / 2 - 20px / 2);
+      left: calc(80px / 2 - 8px / 2);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .CommunityLinks {
+    .CommunityLinkItem {
+      display: flex;
+      justify-content: center;
+
+      .CommunityLink {
+        display: flex;
+        flex-direction: column;
+        margin-top: 56px;
+
+        .CommunityLinkIcon {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .H2 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 77px;
+    text-align: center;
+  }
+
+  .Text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23px;
+  }
+
+  .IconWithWhiteBackground {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HomePage {
+    .CatOutlined {
+      margin-top: (95px - 20);
+      margin-right: -30px;
+      width: 309px;
+      height: 326px;
+
+      &:after {
+        top: 145px;
+        height: 388px;
+        background: linear-gradient(180deg, rgba(16, 16, 16, 0) 22.37%, #101010 55.75%);
+      }
+    }
+
+    .CatOutlinedText {
+      margin-top: -77px;
+
+      .H1 {
+        font-size: 56px;
+        line-height: 56px;
+      }
+
+      .Soon {
+        margin-top: 1rem;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    .ScrollDownButton {
+      margin: 80px auto 104px;
+    }
+
+    .CommunityTitle {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: -1rem;
+    }
+
+    .H2 {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+}

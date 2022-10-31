@@ -1,0 +1,98 @@
+.Header {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  z-index: 1;
+
+  .Logo {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+  }
+
+  .HeaderButtons {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+
+    .DappButton {
+      margin-left: 12px;
+    }
+  }
+}
+
+.Content {
+  display: flex;
+  flex: 1;
+}
+
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 80px 2.5rem;
+
+  .Policies {
+    display: flex;
+    column-gap: 1.5rem;
+
+    .Policy {
+      opacity: 0.3;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .FooterButtons {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+  }
+
+  .FooterText {
+    color: #5E5E5E;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Header {
+    padding: 1rem 20px;
+
+    .Logo {
+      column-gap: 9px;
+    }
+
+    .HeaderButtons {
+      .DappButton {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
+  .Footer {
+    flex-direction: column;
+    margin: 0 auto 2rem;
+
+    .Policies {
+      flex-direction: column;
+      row-gap: 7px;
+    }
+
+    .FooterButtons {
+      margin: 2.5rem;
+    }
+
+    .FooterText {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
