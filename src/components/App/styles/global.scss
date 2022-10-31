@@ -97,11 +97,21 @@ strong {
 }
 
 /* Specific global styles */
+hr {
+  height: 4px;
+  width: 100%;
+  margin: 8rem 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #F5F5F5;
+}
+
 ._TextAccent {
   color: #00C38B;
 }
 
 ._Button {
+  display: block;
   padding: 0 1rem;
   border: 2px solid #F5F5F5;
   border-radius: 4px;
@@ -113,13 +123,9 @@ strong {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.25s ease;
-  background: #00C38B; // TODO: remove
-  text-fill-color: unset; // TODO: remove
-  -webkit-text-fill-color: unset; // TODO: remove
 
   &:hover {
     background-color: #0AA77A;
-    background: #0AA77A; // TODO: remove
   }
 
   &:active {
@@ -133,20 +139,5 @@ strong {
     border-width: 4px;
     border-radius: 10px;
     line-height: 48px;
-  }
-}
-
-._Link {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  text-align: center;
-  text-fill-color: unset; // TODO: remove
-  -webkit-text-fill-color: unset; // TODO: remove
-  color: #F5F5F5;
-  transition: color 0.25s ease;
-
-  &:hover {
-    color: #0AA77A;
   }
 }

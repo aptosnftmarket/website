@@ -2,181 +2,288 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: center;
 
   .Section100vh {
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 9rem);
     align-items: center;
     justify-content: center;
+    min-height: calc(100vh - 6rem);
+    width: 100%;
+    padding-top: 1.5rem;
 
-    .Title {
-      margin-bottom: 3rem;
-      font-weight: 900;
-      font-size: 100px;
-      line-height: 90%;
-      text-align: center;
-      letter-spacing: -0.01em;
-    }
-
-    .Description {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 120%;
-      text-align: center;
-      letter-spacing: -0.01em;
-    }
-
-    .OpenDapp {
-      margin: 3rem 0 (5.5rem + 4rem);
-    }
-  }
-
-  .CatOutlined {
-    align-self: center;
-    height: 478px;
-    width: 452px;
-    margin-top: (44px - 20);
-    background: url('./catOutlined.svg') no-repeat center;
-    background-size: 100%;
-    overflow: hidden;
-
-    &:after {
-      content: "";
-      position: absolute;
-      height: 745px;
-      top: 0;
-      right: 0;
-      left: 0;
-      background: linear-gradient(180deg, rgba(16, 16, 16, 0) 28.55%, #101010 53.28%);
-    }
-  }
-
-  .CatOutlinedText {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: -95px auto 0;
-    text-align: center;
-    z-index: 1;
-
-    .H1 {
-      font-size: 90px;
-      font-weight: 600;
-      line-height: 90px;
-      letter-spacing: -0.01em;
-    }
-
-    .Soon {
-      margin-top: 13px;
-      font-size: 31px;
-      color: #E72258;
-    }
-  }
-
-  .ScrollDownButton {
-    position: relative;
-    margin: 69px auto 172px;
-
-    .ScrollDownButtonIcon {
-      position: absolute;
-      top: calc(80px / 2 - 20px / 2);
-      left: calc(80px / 2 - 8px / 2);
-      z-index: 1;
-      pointer-events: none;
-    }
-  }
-
-  .CommunityLinks {
-    .CommunityLinkItem {
+    .Section100vhContent {
+      position: relative;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
 
-      .CommunityLink {
-        display: flex;
-        flex-direction: column;
-        margin-top: 56px;
+      .Title {
+        margin-bottom: 3rem;
+        font-weight: 900;
+        font-size: 100px;
+        line-height: 90%;
+        text-align: center;
+        letter-spacing: -0.01em;
+      }
 
-        .CommunityLinkIcon {
-          margin-bottom: 1rem;
+      .Description {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.01em;
+      }
+
+      .OpenDapp {
+        margin: 3rem 0 (5.5rem + 4rem);
+      }
+
+      .Nft {
+        position: absolute;
+        height: auto;
+
+        &.Nft1 {
+          top: 0;
+          left: 14px;
+          width: 74px;
+        }
+
+        &.Nft2 {
+          top: (74px + 24px);
+          left: 74px;
+          width: 122px;
+        }
+
+        &.Nft3 {
+          top: (74px + 24px + 122px + 24px);
+          left: 0;
+          width: 88px;
+        }
+
+        &.Nft4 {
+          top: 0;
+          right: 0;
+          width: 93px;
+        }
+
+        &.Nft5 {
+          top: (207px + 26px);
+          right: 75px;
+          width: 122px;
+        }
+
+        &.Nft6 {
+          top: (207px + 26px + 122px + 26px);
+          right: 19px;
+          width: 74px;
         }
       }
     }
   }
 
-  .H2 {
-    font-size: 64px;
-    font-weight: 600;
-    line-height: 77px;
-    text-align: center;
-  }
+  .Container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 8rem;
 
-  .Text {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 23px;
-  }
+    .AppPreview {
+      display: flex;
+      align-self: center;
+      margin-bottom: calc(-8rem - 4px);
+      padding: 0 90px;
 
-  .IconWithWhiteBackground {
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      left: 1px;
-      border-radius: 50%;
-      background-color: white;
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .HomePage {
-    .CatOutlined {
-      margin-top: (95px - 20);
-      margin-right: -30px;
-      width: 309px;
-      height: 326px;
-
-      &:after {
-        top: 145px;
-        height: 388px;
-        background: linear-gradient(180deg, rgba(16, 16, 16, 0) 22.37%, #101010 55.75%);
+      .AppPreviewImage {
+        width: 100%;
+        max-width: 945px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
       }
     }
 
-    .CatOutlinedText {
-      margin-top: -77px;
-
-      .H1 {
-        font-size: 56px;
-        line-height: 56px;
-      }
-
-      .Soon {
-        margin-top: 1rem;
-        font-size: 24px;
-        line-height: 29px;
-      }
+    .Title2 {
+      font-weight: 900;
+      font-size: 80px;
+      line-height: 90%;
+      letter-spacing: -0.01em;
     }
 
-    .ScrollDownButton {
-      margin: 80px auto 104px;
+    .Description2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      letter-spacing: -0.01em;
     }
 
-    .CommunityTitle {
+    .SaleSection {
       display: flex;
       flex-direction: column;
-      margin-bottom: -1rem;
+
+      .SaleTitle {
+        max-width: 563px;
+      }
+
+      .SaleDescription {
+        align-self: flex-end;
+        max-width: 563px;
+        margin: 3.5rem 5rem 0 0;
+
+        .AnftDocsLink {
+          position: relative;
+          text-decoration: none;
+          color: #00C38B;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: #0AA77A;
+
+            &:after {
+              background-color: #0AA77A;
+            }
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            right: 1px;
+            bottom: 6px;
+            left: 1px;
+            height: 1px;
+            background-color: #00C38B;
+            transition: background-color 0.25s ease;
+          }
+        }
+      }
+
+      .GoToPublicSaleButton {
+        margin-top: 3rem;
+        font-weight: 700;
+      }
     }
 
-    .H2 {
-      font-size: 48px;
-      line-height: 58px;
+    .RoadmapSection {
+      .RoadmapDescription {
+        margin: 2.5rem 0 3.5rem;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 110%;
+        text-align: center;
+        letter-spacing: -0.01em;
+
+        .LitepaperLink {
+          position: relative;
+          text-decoration: none;
+          color: #00C38B;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: #0AA77A;
+
+            &:after {
+              background-color: #0AA77A;
+            }
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            right: 1px;
+            bottom: 4px;
+            left: 1px;
+            height: 1px;
+            background-color: #00C38B;
+            transition: background-color 0.25s ease;
+          }
+        }
+      }
+
+      .RoadmapList {
+        display: flex;
+
+        > li {
+          width: calc(100% / 4);
+          margin-right: 4rem;
+
+          &:first-child {
+            .RoadmapSublist {
+              list-style-image: url('./check.svg');
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .RoadmapSublistTitle {
+          margin-bottom: 25px;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 110%;
+          letter-spacing: -0.01em;
+          color: #00C48B;
+        }
+
+        .RoadmapSublist {
+          display: flex;
+          flex-direction: column;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 120%;
+          letter-spacing: -0.01em;
+          list-style: disc;
+
+          li {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .CommunitySection {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .CommunityLinks {
+        display: flex;
+        justify-self: center;
+        margin-top: 85px;
+
+        li {
+          margin-right: 4rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .CommunityLink {
+          display: flex;
+          align-items: center;
+          width: (80px + 24px + 115px);
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 120%;
+          letter-spacing: -0.01em;
+          text-decoration: none;
+          color: #F5F5F5;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: #0AA77A;
+          }
+
+          .CommunityLinkIcon {
+            width: 80px;
+            margin-right: 24px;
+          }
+        }
+      }
     }
   }
 }
+
+@media screen and (max-width: 1200px) {}

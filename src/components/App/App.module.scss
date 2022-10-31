@@ -36,77 +36,100 @@
   .HeaderLinks {
     display: flex;
     column-gap: 2rem;
+
+    .HeaderLink {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #F5F5F5;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #0AA77A;
+      }
+    }
+  }
+
+  .RightSide {
+    display: flex;
+    align-items: center;
+
+    .SocialNetworks {
+      display: flex;
+      margin-right: 2rem;
+
+      &:last-child {
+        .SocialNetwork {
+          margin-right: 0;
+        }
+      }
+
+      .SocialNetwork {
+        width: 2rem;
+        margin-right: 0.75rem;
+      }
+    }
   }
 }
 
 .Content {
   display: flex;
   flex: 1;
-  margin-top: (9rem - 1rem);
+  margin-top: 6rem;
 }
 
 .Footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 80px 2.5rem;
+  margin-top: 8rem;
+  padding: 3.5rem 3.5rem 4rem;
+  border-top: 4px solid #F5F5F5;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
 
   .Policies {
     display: flex;
     column-gap: 1.5rem;
 
     .Policy {
-      opacity: 0.3;
-      transition: opacity 0.2s ease;
+      text-decoration: none;
+      color: #F5F5F5;
+      transition: color 0.25s ease;
 
       &:hover {
-        opacity: 1;
+        color: #0AA77A;
       }
     }
   }
 
-  .FooterButtons {
+  .CenterPart {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    column-gap: 0.75rem;
-  }
 
-  .FooterText {
-    color: #5E5E5E;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .Header {
-    padding: 1rem 20px;
-
-    .Logo {
-      column-gap: 9px;
+    .Sign {
+      margin: 1rem 0;
     }
 
-    .HeaderButtons {
-      .DappButton {
-        margin-left: 0.25rem;
+    .SocialNetworks {
+      display: flex;
+
+      .SocialNetwork {
+        width: 40px;
+        margin-right: 0.75rem;
+
+        &:last-child {
+          .SocialNetwork {
+            margin-right: 0;
+          }
+        }
       }
     }
   }
-
-  .Footer {
-    flex-direction: column;
-    margin: 0 auto 2rem;
-
-    .Policies {
-      flex-direction: column;
-      row-gap: 7px;
-    }
-
-    .FooterButtons {
-      margin: 2.5rem;
-    }
-
-    .FooterText {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
 }
+
+@media screen and (max-width: 1200px) {}
