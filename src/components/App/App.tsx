@@ -6,6 +6,7 @@ import { HomePage } from '../../pages'
 import { scrollToElement } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
+import { Background } from './Background'
 import mediumWhite from './mediumWhite.svg'
 import telegramWhite from './telegramWhite.svg'
 import twitterWhite from './twitterWhite.svg'
@@ -18,6 +19,7 @@ export function App(): JSX.Element {
 
   return (
     <>
+      <Background />
       <header id="header" className={styles.Header}>
         <div className={styles.Logo} onClick={(): void => scrollTo('header')}>
           <svg width="7" height="27" viewBox="0 0 7 27" fill="none" xmlns="http://www.w3.org/2000/svg">
