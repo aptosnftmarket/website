@@ -2,11 +2,9 @@ import classNames from 'classnames'
 import { useRef, useState } from 'react'
 
 import { useOnWindowReize } from '../../hooks'
-import nft1 from './1.png'
 import nft2 from './2.png'
 import nft3 from './3.png'
 import nft4 from './4.png'
-import nft5 from './5.png'
 import nft6 from './6.png'
 import appPreview from './appPreview.jpeg'
 import styles from './HomePage.module.scss'
@@ -31,11 +29,11 @@ export function HomePage(): JSX.Element {
     <div className={styles.HomePage}>
       <div className={styles.Section100vh} ref={ref1}>
         <div className={styles.Section100vhContent} ref={ref2}>
-          <img className={classNames(styles.Nft, styles.Nft1)} src={nft1} alt="NFT" />
+          <div className={classNames(styles.Nft, styles.Nft1)} />
           <img className={classNames(styles.Nft, styles.Nft2)} src={nft2} alt="NFT" />
           <img className={classNames(styles.Nft, styles.Nft3)} src={nft3} alt="NFT" />
           <img className={classNames(styles.Nft, styles.Nft4)} src={nft4} alt="NFT" />
-          <img className={classNames(styles.Nft, styles.Nft5)} src={nft5} alt="NFT" />
+          <div className={classNames(styles.Nft, styles.Nft5)} />
           <img className={classNames(styles.Nft, styles.Nft6)} src={nft6} alt="NFT" />
           <h1 className={styles.Title}>
             All <div className="_TextAccent">Aptos NFTs</div> in one place!
@@ -146,7 +144,7 @@ export function HomePage(): JSX.Element {
             </li>
             <li>
               <a className={styles.CommunityLink} href="#TODO">
-                <img className={styles.CommunityLinkIcon} src={twitter} alt="Twitter" />
+                <img className={styles.CommunityLinkIcon} src={medium} alt="Medium" />
                 Follow us on Medium
               </a>
             </li>
