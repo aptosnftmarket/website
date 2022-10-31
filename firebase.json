@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "aptosnft-website", 
     "public": "dist",
     "ignore": [
       "firebase.json",
