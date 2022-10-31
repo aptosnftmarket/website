@@ -5,10 +5,11 @@
   "targets": {
     "onestardev": {
       "hosting": {
-        "onestardev": [
+        "website": [
           "aptosnft-website"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
