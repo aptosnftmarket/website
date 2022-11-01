@@ -91,7 +91,7 @@ export function App(): JSX.Element {
 
         <div className={styles.CenterPart}>
           <img src={aptos} alt="Build for Aptos" />
-          <p className={styles.Sign}>Built with ❤️ & 🔥 on APTOS</p>
+          <p className={styles.Sign}>Built with ❤️️ & 🔥 on APTOS</p>
           <ul className={styles.SocialNetworks}>
             <li>
               <a href="#TODO">
