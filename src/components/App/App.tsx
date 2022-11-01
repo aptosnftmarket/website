@@ -1,7 +1,9 @@
 import './styles/index.scss'
 
-import { MouseEvent, useEffect } from 'react'
+import classNames from 'classnames'
+import { MouseEvent, useEffect, useState } from 'react'
 
+import { useOnWindowScroll } from '../../hooks'
 import { HomePage } from '../../pages'
 import { scrollToElement } from '../../utils'
 import styles from './App.module.scss'
@@ -12,15 +14,19 @@ import telegramWhite from './telegramWhite.svg'
 import twitterWhite from './twitterWhite.svg'
 
 export function App(): JSX.Element {
+  const [isHeaderSmall, setIsHeaderSmall] = useState(false)
+
   useEffect(() => {
     // TODO: uncomment this after appPreview.jpeg ready
     // scrollTo(window.location.hash.replace('#', ''))
   }, [])
 
+  useOnWindowScroll(() => setIsHeaderSmall(window.scrollY > 64))
+
   return (
     <>
       <Background />
-      <header id="header" className={styles.Header}>
+      <header id="header" className={classNames(styles.Header, { [styles.small]: isHeaderSmall })}>
         <div className={styles.Logo} onClick={(): void => scrollTo('header')}>
           <svg width="7" height="27" viewBox="0 0 7 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
