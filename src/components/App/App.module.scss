@@ -60,9 +60,11 @@
       display: flex;
       margin-right: 2rem;
 
-      &:last-child {
-        .SocialNetwork {
-          margin-right: 0;
+      li {
+        &:last-child {
+          .SocialNetwork {
+            margin-right: 0;
+          }
         }
       }
 
@@ -77,8 +79,9 @@
 .Content {
   display: flex;
   flex: 1;
-  margin-top: 6rem;
+  margin: 6rem auto 0;
   z-index: 1;
+  max-width: calc(1125px + 120px * 2);
 }
 
 .Footer {
