@@ -50,25 +50,25 @@ export function App(): JSX.Element {
             </a>
           </li>
           <li>
-            <a className={styles.HeaderLink} href="#TODO">
-              Litepaper
+            <a className={styles.HeaderLink} href="#SOON">
+              Litepaper (Soon)
             </a>
           </li>
         </ul>
         <div className={styles.RightSide}>
           <ul className={styles.SocialNetworks}>
             <li>
-              <a href="#TODO">
+              <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
               </a>
             </li>
             <li>
-              <a href="#TODO">
+              <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
               </a>
             </li>
             <li>
-              <a href="#TODO">
+              <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
               </a>
             </li>

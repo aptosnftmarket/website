@@ -56,99 +56,106 @@ export function HomePage(): JSX.Element {
 
         <hr />
 
-        <div id="sale" className={styles.SaleSection}>
-          <h2 className={classNames(styles.Title2, styles.SaleTitle)}>
-            Public Sale for <span className="_TextAccent">Aptos</span> community
-          </h2>
-          <p className={classNames(styles.Description2, styles.SaleDescription)}>
-            We believe in community ownership and will be implementing Public Sale for AptosNFT.market token{' '}
-            <span className="_TextAccent">ANFT</span> within the next weeks. Whitelist will be open shortly.
-            <br />
-            Read{' '}
-            <a className={styles.AnftDocsLink} href="#TODO">
-              here for more
-            </a>
-            .<button className={classNames('_Button big', styles.GoToPublicSaleButton)}>Go to Public Sale</button>
-          </p>
-        </div>
-
-        <hr />
-
-        <div id="roadmap" className={styles.RoadmapSection}>
-          <h2 className={classNames(styles.Title2, '_tac')}>Roadmap</h2>
-          <p className={styles.RoadmapDescription}>
-            Our high level roadmap. Read more in{' '}
-            <a className={styles.LitepaperLink} href="#TODO">
-              litepaper
-            </a>{' '}
-            (Soon).
-          </p>
-          <ul className={styles.RoadmapList}>
-            <li>
-              <p className={styles.RoadmapSublistTitle}>Q3 / 2022</p>
-              <ul className={styles.RoadmapSublist}>
-                <li>Founders with Google and Web2/Web3 experience</li>
-                <li>Team of experienced Rust devs assembled</li>
-                <li>Evaluating MOVE and Aptos ecosystem</li>
-                <li>Legal & regulatory analysis</li>
-              </ul>
-            </li>
-            <li>
-              <p className={styles.RoadmapSublistTitle}>Q4 / 2022</p>
-              <ul className={styles.RoadmapSublist}>
-                <li>Developing tokenomics and litepaper</li>
-                <li>Partner with Aptos ecosystem projects</li>
-                <li>IDO & TGE of token ANFT</li>
-                <li>ANFT launch on DEXes and CEXes</li>
-                <li>ANFT staking</li>
-                <li>Alpha AptosNFT.Market development</li>
-              </ul>
-            </li>
-            <li>
-              <p className={styles.RoadmapSublistTitle}>Q1 / 2023</p>
-              <ul className={styles.RoadmapSublist}>
-                <li>Alpha AptosNFT.Market launch</li>
-                <li>Smart Contracts audits</li>
-                <li>NFT Oracles Integrations</li>
-                <li>Beta AptosNFT.Market development</li>
-              </ul>
-            </li>
-            <li>
-              <p className={styles.RoadmapSublistTitle}>Q2 / 2023</p>
-              <ul className={styles.RoadmapSublist}>
-                <li>Beta AptosNFT.Market launch</li>
-                <li>Feature enhancement and iterations</li>
-                <li>DAO governance</li>
-                <li>Fiat on-off ramps</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <hr />
-
-        <div className={styles.CommunitySection}>
-          <h2 className={classNames(styles.Title2, '_tac')}>Join our community </h2>
-          <ul className={styles.CommunityLinks}>
-            <li>
-              <a className={styles.CommunityLink} href="#TODO">
-                <img className={styles.CommunityLinkIcon} src={twitter} alt="Twitter" />
-                Follow us on Twitter
+        <div className={styles.BackgroundFog}>
+          <div id="sale" className={styles.SaleSection}>
+            <h2 className={classNames(styles.Title2, styles.SaleTitle)}>
+              Public Sale for <span className="_TextAccent">Aptos</span> community
+            </h2>
+            <p className={classNames(styles.Description2, styles.SaleDescription)}>
+              We believe in community ownership and will be implementing Public Sale for AptosNFT.market token{' '}
+              <span className="_TextAccent">ANFT</span> within the next weeks. Whitelist will be open shortly.
+              <br />
+              Read{' '}
+              <a
+                className={styles.AnftDocsLink}
+                href="https://medium.com/@AptosNFT_Market"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here for more
               </a>
-            </li>
-            <li>
-              <a className={styles.CommunityLink} href="#TODO">
-                <img className={styles.CommunityLinkIcon} src={telegram} alt="Telegram" />
-                Join the Telegram community
-              </a>
-            </li>
-            <li>
-              <a className={styles.CommunityLink} href="#TODO">
-                <img className={styles.CommunityLinkIcon} src={medium} alt="Medium" />
-                Follow us on Medium
-              </a>
-            </li>
-          </ul>
+              .<button className={classNames('_Button big', styles.GoToPublicSaleButton)}>Go to Public Sale</button>
+            </p>
+          </div>
+
+          <hr />
+
+          <div id="roadmap" className={styles.RoadmapSection}>
+            <h2 className={classNames(styles.Title2, '_tac')}>Roadmap</h2>
+            <p className={styles.RoadmapDescription}>
+              Our high level roadmap. Read more in{' '}
+              <a className={styles.LitepaperLink} href="#TODO">
+                litepaper
+              </a>{' '}
+              (Soon).
+            </p>
+            <ul className={styles.RoadmapList}>
+              <li>
+                <p className={styles.RoadmapSublistTitle}>Q3 / 2022</p>
+                <ul className={styles.RoadmapSublist}>
+                  <li>Founders with Google and Web2/Web3 experience</li>
+                  <li>Team of experienced Rust devs assembled</li>
+                  <li>Evaluating MOVE and Aptos ecosystem</li>
+                  <li>Legal & regulatory analysis</li>
+                </ul>
+              </li>
+              <li>
+                <p className={styles.RoadmapSublistTitle}>Q4 / 2022</p>
+                <ul className={styles.RoadmapSublist}>
+                  <li>Developing tokenomics and litepaper</li>
+                  <li>Partner with Aptos ecosystem projects</li>
+                  <li>IDO & TGE of token ANFT</li>
+                  <li>ANFT launch on DEXes and CEXes</li>
+                  <li>ANFT staking</li>
+                  <li>Alpha AptosNFT.Market development</li>
+                </ul>
+              </li>
+              <li>
+                <p className={styles.RoadmapSublistTitle}>Q1 / 2023</p>
+                <ul className={styles.RoadmapSublist}>
+                  <li>Alpha AptosNFT.Market launch</li>
+                  <li>Smart Contracts audits</li>
+                  <li>NFT Oracles Integrations</li>
+                  <li>Beta AptosNFT.Market development</li>
+                </ul>
+              </li>
+              <li>
+                <p className={styles.RoadmapSublistTitle}>Q2 / 2023</p>
+                <ul className={styles.RoadmapSublist}>
+                  <li>Beta AptosNFT.Market launch</li>
+                  <li>Feature enhancement and iterations</li>
+                  <li>DAO governance</li>
+                  <li>Fiat on-off ramps</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div className={styles.CommunitySection}>
+            <h2 className={classNames(styles.Title2, '_tac')}>Join our community </h2>
+            <ul className={styles.CommunityLinks}>
+              <li>
+                <a className={styles.CommunityLink} href="#TODO">
+                  <img className={styles.CommunityLinkIcon} src={twitter} alt="Twitter" />
+                  Follow us on Twitter
+                </a>
+              </li>
+              <li>
+                <a className={styles.CommunityLink} href="#TODO">
+                  <img className={styles.CommunityLinkIcon} src={telegram} alt="Telegram" />
+                  Join the Telegram community
+                </a>
+              </li>
+              <li>
+                <a className={styles.CommunityLink} href="#TODO">
+                  <img className={styles.CommunityLinkIcon} src={medium} alt="Medium" />
+                  Follow us on Medium
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

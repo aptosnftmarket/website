@@ -125,6 +125,30 @@
       letter-spacing: -0.01em;
     }
 
+    .BackgroundFog {
+      position: relative;
+      margin: -1.5rem;
+      padding: 1.5rem;
+      background-color: rgba(13, 16, 15, 0.7);
+      -webkit-box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.7);
+      -moz-box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.7);
+      box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.7);
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0 0 2rem 0.5rem rgba(13, 16, 15, 0.3);
+      }
+
+      * {
+        z-index: 1;
+      }
+    }
+
     .SaleSection {
       display: flex;
       flex-direction: column;
