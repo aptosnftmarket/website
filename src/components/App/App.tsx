@@ -9,9 +9,9 @@ import { scrollTo } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
-import mediumWhite from './mediumWhite.svg'
-import telegramWhite from './telegramWhite.svg'
-import twitterWhite from './twitterWhite.svg'
+import medium from './medium.svg'
+import telegram from './telegram.svg'
+import twitter from './twitter.svg'
 
 export function App(): JSX.Element {
   const [animate, setAnimate] = useState(false)
@@ -77,17 +77,17 @@ export function App(): JSX.Element {
           <ul className={styles.SocialNetworks}>
             <li>
               <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
+                <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
               </a>
             </li>
             <li>
               <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
+                <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
               </a>
             </li>
             <li>
               <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
+                <img className={styles.SocialNetwork} src={medium} alt="Medium" />
               </a>
             </li>
           </ul>
@@ -164,17 +164,17 @@ export function App(): JSX.Element {
               <ul className={styles.SocialNetworks}>
                 <li>
                   <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
+                    <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
                   </a>
                 </li>
                 <li>
                   <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
+                    <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
                   </a>
                 </li>
                 <li>
                   <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
+                    <img className={styles.SocialNetwork} src={medium} alt="Medium" />
                   </a>
                 </li>
               </ul>
@@ -201,17 +201,17 @@ export function App(): JSX.Element {
           <ul className={styles.SocialNetworks}>
             <li>
               <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
+                <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
               </a>
             </li>
             <li>
               <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
+                <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
               </a>
             </li>
             <li>
               <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
+                <img className={styles.SocialNetwork} src={medium} alt="Medium" />
               </a>
             </li>
           </ul>

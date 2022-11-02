@@ -58,7 +58,7 @@
         height: auto;
         opacity: 0;
         transform: translatey(0px);
-        animation: floatSmall 9s ease-in-out infinite;
+        //animation: floatSmall 9s ease-in-out infinite;
         transition: opacity 0.5s 0.75s ease, top 0.5s 1s ease, left 0.5s 1s ease, right 0.5s 1s ease;
 
         &.animate {
@@ -72,8 +72,8 @@
           border: 4px solid #F5F5F5;
           border-radius: 10px;
           background: url('./nft1.gif') no-repeat center/cover;
-          animation-name: floatSmall;
-          animation-duration: 9s;
+          //animation-name: floatSmall;
+          //animation-duration: 9s;
 
           &.animate {
             top: 0;
@@ -84,8 +84,8 @@
         &.Nft2 {
           left: -300px;
           width: 122px;
-          animation-name: floatMedium;
-          animation-duration: 7s;
+          //animation-name: floatMedium;
+          //animation-duration: 7s;
 
           &.animate {
             top: (74px + 24px);
@@ -97,8 +97,8 @@
           left: -500px;
 
           width: 207px;
-          animation-name: floatLarge;
-          animation-duration: 5s;
+          //animation-name: floatLarge;
+          //animation-duration: 5s;
 
           &.animate {
             top: (74px + 24px + 122px + 24px);
@@ -109,8 +109,8 @@
         &.Nft4 {
           right: -500px;
           width: 207px;
-          animation-name: floatLarge;
-          animation-duration: 5s;
+          //animation-name: floatLarge;
+          //animation-duration: 5s;
 
           &.animate {
             top: 0;
@@ -125,8 +125,8 @@
           border: 4px solid #F5F5F5;
           border-radius: 10px;
           background: url('./nft5.gif') no-repeat center/cover;
-          animation-name: floatMedium;
-          animation-duration: 7s;
+          //animation-name: floatMedium;
+          //animation-duration: 7s;
 
           &.animate {
             top: (207px + 26px);
@@ -137,8 +137,8 @@
         &.Nft6 {
           right: -150px;
           width: 74px;
-          animation-name: floatSmall;
-          animation-duration: 9s;
+          //animation-name: floatSmall;
+          //animation-duration: 9s;
 
           &.animate {
             top: (207px + 26px + 122px + 26px);
@@ -445,6 +445,13 @@
 
     .Container {
       margin: 0 20px;
+
+      .BackgroundFog {
+        background-color: rgba(13, 16, 15, 0.4);
+        -webkit-box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.4);
+        -moz-box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.4);
+        box-shadow: 0 0 3rem 2rem rgba(13, 16, 15, 0.4);
+      }
 
       .AppPreviewContainer {
         margin-bottom: calc(-6rem - 4px);

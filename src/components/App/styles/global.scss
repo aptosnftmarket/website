@@ -126,6 +126,7 @@ hr {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.25s ease, border-color 0.15s ease;
+  user-select: none;
 
   &:hover {
     background-color: #0AA77A;
