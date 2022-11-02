@@ -1,31 +1,20 @@
+import { useMemo } from 'react'
 import Particles from 'react-particles'
 import { loadFull } from 'tsparticles'
-import { Container, Engine } from 'tsparticles-engine'
 
 import styles from './Background.module.scss'
 import config from './config.json'
 
 export function Background(): JSX.Element {
-  return (
-    <Particles
-      // id="tsparticles"
-      className={styles.Background}
-      // @ts-ignore
-      params={config}
-      init={loadFull}
-      loaded={particlesLoaded}
-    />
-  )
-}
+  const params = useMemo(() => {
+    const isMobile = screen.width <= 1200
 
-async function particlesInit(engine: Engine): Promise<void> {
-  // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-  // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-  // starting from v2 you can add only the features you need reducing the bundle size
-  await loadFull(engine)
-  // console.log(engine)
-}
+    config.particles.number.value = isMobile ? 100 : 300
+    config.particles.size.value = isMobile ? 4 : 2
 
-async function particlesLoaded(container?: Container): Promise<void> {
-  // console.log(container)
+    return config
+  }, [])
+
+  // @ts-ignore
+  return <Particles className={styles.Background} params={params} init={loadFull} />
 }

@@ -1,57 +1,87 @@
 import classNames from 'classnames'
-import { useRef, useState } from 'react'
+import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 
 import { useOnWindowReize } from '../../hooks'
-import nft2 from './2.png'
-import nft3 from './3.png'
-import nft4 from './4.png'
-import nft6 from './6.png'
+import { scrollTo } from '../../utils'
 import appPreview from './appPreview.jpeg'
 import styles from './HomePage.module.scss'
 import medium from './medium.svg'
+import nft2 from './nft2.png'
+import nft3 from './nft3.png'
+import nft4 from './nft4.png'
+import nft6 from './nft6.png'
 import telegram from './telegram.svg'
 import twitter from './twitter.svg'
 
 export function HomePage(): JSX.Element {
   const ref1 = useRef<HTMLDivElement>(null)
   const ref2 = useRef<HTMLDivElement>(null)
+  const [animate, setAnimate] = useState(false)
+  const [isReady, setIsReady] = useState(false)
   const [margin, setMargin] = useState(0)
 
-  useOnWindowReize(() => {
-    if (ref1.current && ref2.current) {
-      const offset = ref1.current.offsetHeight - ref2.current.offsetHeight
+  useOnWindowReize(
+    useCallback(() => {
+      if (ref1.current && ref2.current) {
+        const offset = ref1.current.offsetHeight - ref2.current.offsetHeight
+        const desktopOffset = 64 + 12
+        const mobileOffset = 48
+        const isMobile = screen.width <= 1200
 
-      setMargin(-(offset / 2) - 64 + 12)
+        setMargin(-(offset / 2) - (isMobile ? mobileOffset : desktopOffset))
+      }
+    }, [])
+  )
+
+  useEffect(() => {
+    setAnimate(true)
+  }, [])
+
+  useEffect(() => {
+    const { hash } = window.location
+
+    if (isReady) {
+      scrollTo(hash.replace('#', ''))
     }
-  })
+  }, [isReady])
 
   return (
     <div className={styles.HomePage}>
       <div className={styles.Section100vh} ref={ref1}>
         <div className={styles.Section100vhContent} ref={ref2}>
-          <div className={classNames(styles.Nft, styles.Nft1)} />
-          <img className={classNames(styles.Nft, styles.Nft2)} src={nft2} alt="NFT" />
-          <img className={classNames(styles.Nft, styles.Nft3)} src={nft3} alt="NFT" />
-          <img className={classNames(styles.Nft, styles.Nft4)} src={nft4} alt="NFT" />
-          <div className={classNames(styles.Nft, styles.Nft5)} />
-          <img className={classNames(styles.Nft, styles.Nft6)} src={nft6} alt="NFT" />
-          <h1 className={styles.Title}>
-            All <div className="_TextAccent">Aptos NFTs</div> in one place!
-          </h1>
-          <p className={styles.Description}>
-            The easiest way to evaluate, purchase
-            <br />
-            and sell <span className="_TextAccent">Aptos NFTs</span> on all marketplaces at once.
-            <br />
-            Building in stealth, launching soon!
-          </p>
-          <button className={classNames('_Button big', styles.OpenDapp)}>Open dApp (soon)</button>
+          <div className={classNames(styles.Nft, styles.Nft1, { [styles.animate]: animate })} />
+          <img className={classNames(styles.Nft, styles.Nft2, { [styles.animate]: animate })} src={nft2} alt="NFT" />
+          <img className={classNames(styles.Nft, styles.Nft3, { [styles.animate]: animate })} src={nft3} alt="NFT" />
+          <img className={classNames(styles.Nft, styles.Nft4, { [styles.animate]: animate })} src={nft4} alt="NFT" />
+          <div className={classNames(styles.Nft, styles.Nft5, { [styles.animate]: animate })} />
+          <img className={classNames(styles.Nft, styles.Nft6, { [styles.animate]: animate })} src={nft6} alt="NFT" />
+          <div className={classNames(styles.Info, { [styles.animate]: animate })}>
+            <h1 className={styles.Title}>
+              All <p className="_TextAccent">Aptos NFTs</p> in one place!
+            </h1>
+            <p className={styles.Description}>
+              The easiest way to evaluate, purchase
+              <br />
+              and sell <span className="_TextAccent">Aptos NFTs</span> on all marketplaces at once.
+              <br />
+              Building in stealth, launching soon!
+            </p>
+            <button className={classNames(styles.OpenDapp, '_Button big')}>Open dApp (soon)</button>
+          </div>
         </div>
       </div>
 
       <div className={styles.Container}>
-        <div className={styles.AppPreview} style={{ marginTop: margin }}>
-          <img className={styles.AppPreviewImage} src={appPreview} alt="AptosNFT.Market app" />
+        <div className={styles.AppPreviewContainer} style={{ marginTop: margin }}>
+          <div className={classNames(styles.AppPreview, { [styles.animate]: animate })}>
+            <img
+              className={styles.AppPreviewImage}
+              src={appPreview}
+              alt="AptosNFT.Market app"
+              onLoad={(): void => setIsReady(true)}
+              onError={(): void => setIsReady(true)}
+            />
+          </div>
         </div>
 
         <hr />
@@ -84,7 +114,11 @@ export function HomePage(): JSX.Element {
             <h2 className={classNames(styles.Title2, '_tac')}>Roadmap</h2>
             <p className={styles.RoadmapDescription}>
               Our high level roadmap. Read more in{' '}
-              <a className={styles.LitepaperLink} href="#TODO">
+              <a
+                className={styles.LitepaperLink}
+                href="#SOON"
+                onClick={(event: MouseEvent): void => event.preventDefault()}
+              >
                 litepaper
               </a>{' '}
               (Soon).
@@ -137,19 +171,34 @@ export function HomePage(): JSX.Element {
             <h2 className={classNames(styles.Title2, '_tac')}>Join our community </h2>
             <ul className={styles.CommunityLinks}>
               <li>
-                <a className={styles.CommunityLink} href="#TODO">
+                <a
+                  className={styles.CommunityLink}
+                  href="https://twitter.com/AptosNFT_Market"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img className={styles.CommunityLinkIcon} src={twitter} alt="Twitter" />
                   Follow us on Twitter
                 </a>
               </li>
               <li>
-                <a className={styles.CommunityLink} href="#TODO">
+                <a
+                  className={styles.CommunityLink}
+                  href="https://t.me/AptosNFT_Market"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img className={styles.CommunityLinkIcon} src={telegram} alt="Telegram" />
                   Join the Telegram community
                 </a>
               </li>
               <li>
-                <a className={styles.CommunityLink} href="#TODO">
+                <a
+                  className={styles.CommunityLink}
+                  href="https://medium.com/@AptosNFT_Market"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img className={styles.CommunityLinkIcon} src={medium} alt="Medium" />
                   Follow us on Medium
                 </a>

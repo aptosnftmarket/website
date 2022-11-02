@@ -5,7 +5,7 @@ import { MouseEvent, useEffect, useState } from 'react'
 
 import { useOnWindowScroll } from '../../hooks'
 import { HomePage } from '../../pages'
-import { scrollToElement } from '../../utils'
+import { scrollTo } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
@@ -14,20 +14,32 @@ import telegramWhite from './telegramWhite.svg'
 import twitterWhite from './twitterWhite.svg'
 
 export function App(): JSX.Element {
+  const [animate, setAnimate] = useState(false)
   const [isHeaderSmall, setIsHeaderSmall] = useState(false)
-
-  useEffect(() => {
-    // TODO: uncomment this after appPreview.jpeg ready
-    // scrollTo(window.location.hash.replace('#', ''))
-  }, [])
+  const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
 
   useOnWindowScroll(() => setIsHeaderSmall(window.scrollY > 64))
+
+  useEffect(() => {
+    setAnimate(true)
+  }, [])
 
   return (
     <>
       <Background />
-      <header id="header" className={classNames(styles.Header, { [styles.small]: isHeaderSmall })}>
-        <div className={styles.Logo} onClick={(): void => scrollTo('header')}>
+      <header
+        className={classNames(styles.Header, {
+          [styles.animate]: animate,
+          [styles.small]: isHeaderSmall
+        })}
+      >
+        <div
+          className={classNames(styles.Logo, { [styles.animate]: animate })}
+          onClick={(): void => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            setTimeout(() => (window.location.hash = ''), 100)
+          }}
+        >
           <svg width="7" height="27" viewBox="0 0 7 27" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M6.16073 7.34151C6.16005 7.44922 6.13738 7.55571 6.09404 7.65467C6.0507 7.75363 5.98757 7.84306 5.9084 7.91767L4.67428 9.07449C4.59931 9.14682 4.53965 9.23296 4.49871 9.32797C4.45777 9.42298 4.43636 9.52499 4.43571 9.62814L4.43571 9.67766C4.43622 9.78623 4.45973 9.89352 4.50474 9.9927C4.54976 10.0919 4.61531 10.1808 4.69722 10.2538L5.82123 11.2261C5.9273 11.318 6.01237 11.4309 6.07087 11.5573C6.12938 11.6838 6.16 11.8209 6.16073 11.9598L6.16073 25.7201C5.06215 26.2443 3.89732 26.6228 2.69694 26.8454L2.69694 13.6342C2.69643 13.4964 2.66635 13.3603 2.60864 13.2346C2.55094 13.109 2.46691 12.9967 2.36203 12.905L1.23802 11.9283C1.1546 11.8562 1.08774 11.7676 1.04186 11.6683C0.995988 11.5689 0.972151 11.4612 0.971927 11.3521C0.971612 11.2436 0.99523 11.1364 1.04116 11.0377C1.08709 10.939 1.15425 10.8513 1.23802 10.7805L2.20146 9.94323C2.35751 9.80705 2.48236 9.63995 2.56777 9.45296C2.65317 9.26597 2.6972 9.06334 2.69694 8.85843L2.69694 -7.54028e-08C3.90024 0.220414 5.0682 0.597337 6.1699 1.1208L6.16073 7.34151Z"
@@ -44,7 +56,7 @@ export function App(): JSX.Element {
             />
           </svg>
         </div>
-        <ul className={styles.HeaderLinks}>
+        <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
           <li>
             <a className={styles.HeaderLink} href="#sale" onClick={(event): void => scrollTo('sale', event)}>
               Public Sale
@@ -56,12 +68,12 @@ export function App(): JSX.Element {
             </a>
           </li>
           <li>
-            <a className={styles.HeaderLink} href="#SOON">
+            <a className={styles.HeaderLink} href="#SOON" onClick={(event: MouseEvent): void => event.preventDefault()}>
               Litepaper (Soon)
             </a>
           </li>
         </ul>
-        <div className={styles.RightSide}>
+        <div className={classNames(styles.RightSide, { [styles.animate]: animate })}>
           <ul className={styles.SocialNetworks}>
             <li>
               <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
@@ -80,6 +92,94 @@ export function App(): JSX.Element {
             </li>
           </ul>
           <button className="_Button">Open dApp (soon)</button>
+        </div>
+        <div className={classNames(styles.MobileMenu, { [styles.animate]: animate })}>
+          <div
+            className={classNames(styles.MobileMenuButton, { [styles.active]: isMobileMenuActive })}
+            onClick={(): void => setIsMobileMenuActive((value) => !value)}
+          >
+            <ul className={styles.MobileMenuButtonOpen}>
+              <li />
+              <li />
+              <li />
+            </ul>
+            <svg
+              className={styles.MobileMenuButtonClose}
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M19.2877 19.2879C19.681 18.8947 19.681 18.257 19.2877 17.8638L11.4241 10.0001L19.2879 2.13622C19.6812 1.74295 19.6812 1.10534 19.2879 0.712073C18.8946 0.318806 18.257 0.318806 17.8638 0.712073L9.99997 8.57593L2.13617 0.712071C1.74291 0.318804 1.1053 0.318804 0.712036 0.712071C0.318772 1.10534 0.318771 1.74295 0.712035 2.13622L8.57583 10.0001L0.712187 17.8638C0.318923 18.257 0.318923 18.8947 0.712187 19.2879C1.10545 19.6812 1.74306 19.6812 2.13632 19.2879L9.99997 11.4242L17.8636 19.2879C18.2569 19.6812 18.8945 19.6812 19.2877 19.2879Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <ul className={classNames(styles.MobileMenuContent, { [styles.active]: isMobileMenuActive })}>
+            <li>
+              <button className="_Button">Open dApp (soon)</button>
+            </li>
+            <li>
+              <ul className={styles.HeaderLinks}>
+                <li>
+                  <a
+                    className={styles.HeaderLink}
+                    href="#sale"
+                    onClick={(event): void => {
+                      scrollTo('sale', event)
+                      setIsMobileMenuActive(false)
+                    }}
+                  >
+                    Public Sale
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={styles.HeaderLink}
+                    href="#roadmap"
+                    onClick={(event): void => {
+                      scrollTo('roadmap', event)
+                      setIsMobileMenuActive(false)
+                    }}
+                  >
+                    Roadmap
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={styles.HeaderLink}
+                    href="#SOON"
+                    onClick={(event: MouseEvent): void => event.preventDefault()}
+                  >
+                    Litepaper (Soon)
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul className={styles.SocialNetworks}>
+                <li>
+                  <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
+                    <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
+                    <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
+                    <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </header>
       <main className={styles.Content}>
@@ -100,17 +200,17 @@ export function App(): JSX.Element {
           <p className={styles.Sign}>Built with ❤️️ & 🔥 on APTOS</p>
           <ul className={styles.SocialNetworks}>
             <li>
-              <a href="#TODO">
+              <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={twitterWhite} alt="Twitter" />
               </a>
             </li>
             <li>
-              <a href="#TODO">
+              <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={telegramWhite} alt="Telegram" />
               </a>
             </li>
             <li>
-              <a href="#TODO">
+              <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
                 <img className={styles.SocialNetwork} src={mediumWhite} alt="Medium" />
               </a>
             </li>
@@ -121,12 +221,4 @@ export function App(): JSX.Element {
       </footer>
     </>
   )
-}
-
-function scrollTo(elementId: string, event?: MouseEvent): void {
-  const headerHeight = 96
-
-  event?.preventDefault()
-  scrollToElement(elementId, headerHeight + 16)
-  setTimeout(() => (window.location.hash = `#${elementId}`), 100)
 }

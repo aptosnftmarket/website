@@ -37,6 +37,8 @@
   }
 
   .Logo {
+    position: relative;
+    left: -500px;
     display: flex;
     align-items: center;
     column-gap: 10px;
@@ -44,11 +46,27 @@
     font-weight: 700;
     user-select: none;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s 0.75s ease, left 0.5s 1s ease;
+
+    &.animate {
+      left: 0;
+      opacity: 1;
+    }
   }
 
   .HeaderLinks {
+    position: relative;
+    top: -100px;
     display: flex;
     column-gap: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s 0.75s ease, top 0.5s 1s ease;
+
+    &.animate {
+      top: 0;
+      opacity: 1;
+    }
 
     .HeaderLink {
       font-weight: 500;
@@ -66,8 +84,17 @@
   }
 
   .RightSide {
+    position: relative;
+    right: -500px;
     display: flex;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s 0.75s ease, right 0.5s 1s ease;
+
+    &.animate {
+      right: 0;
+      opacity: 1;
+    }
 
     .SocialNetworks {
       display: flex;
@@ -84,6 +111,36 @@
       .SocialNetwork {
         width: 2rem;
         margin-right: 0.75rem;
+      }
+    }
+  }
+
+  .MobileMenu {
+    display: none;
+    right: -100px;
+    opacity: 0;
+    transition: opacity 0.5s 0.75s ease, right 0.5s 1s ease;
+
+    &.animate {
+      right: 0;
+      opacity: 1;
+    }
+
+    .MobileMenuButton {
+      opacity: 0;
+
+      .MobileMenuButtonOpen {}
+
+      .MobileMenuButtonClose {}
+    }
+
+    .MobileMenuContent {
+      .HeaderLinks {
+        .HeaderLink {}
+      }
+
+      .SocialNetworks {
+        .SocialNetwork {}
       }
     }
   }
@@ -151,4 +208,146 @@
   }
 }
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+  .Header {
+    height: (20px + 26px * 2);
+    padding: 26px 20px;
+    background-color: rgba(13, 16, 15, 0.7);
+
+    &:after {
+      top: (20px + 26px * 2) !important;
+      height: 2rem;
+    }
+
+    .HeaderLinks,
+    .RightSide {
+      display: none;
+    }
+
+    .MobileMenu {
+      display: flex;
+
+      .MobileMenuButton {
+        position: absolute;
+        top: 26px;
+        right: 20px;
+        margin: -1rem;
+        padding: 1rem;
+        opacity: 1;
+        cursor: pointer;
+        z-index: 101;
+        transition: right 0.5s ease;
+
+        &.active {
+          right: calc(50% - 20px / 2);
+
+          .MobileMenuButtonOpen {
+            display: none;
+          }
+
+          .MobileMenuButtonClose {
+            display: flex;
+            color: #F5F5F5;
+            transition: color 0.25s ease;
+          }
+        }
+
+        &:hover {
+          .MobileMenuButtonOpen {
+            li {
+              background-color: #00c38b;
+            }
+          }
+
+          .MobileMenuButtonClose {
+            color: #00c38b;
+          }
+        }
+
+        &:active {
+          .MobileMenuButtonOpen {
+            li {
+              background-color: #0aa77a;
+            }
+          }
+
+          .MobileMenuButtonClose {
+            color: #0aa77a;
+          }
+        }
+
+        .MobileMenuButtonOpen {
+          display: flex;
+          flex-direction: column;
+          row-gap: 7px;
+          height: 1.25rem;
+          width: 1.5rem;
+
+          li {
+            height: 2px;
+            background-color: #F5F5F5;
+            transition: background-color 0.25s ease;
+          }
+        }
+
+        .MobileMenuButtonClose {
+          position: relative;
+          display: none;
+        }
+      }
+
+      .MobileMenuContent {
+        display: flex;
+        box-sizing: border-box;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 100%;
+        padding: 85px 0 4.5rem;
+        background-color: #0D100F;
+        z-index: 100;
+        transition: left 0.45s ease;
+
+        &.active {
+          left: 0;
+        }
+
+        .HeaderLinks {
+          display: flex;
+          opacity: 1;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 2rem;
+          top: 0;
+
+          .HeaderLink {
+            line-height: 27px;
+          }
+        }
+
+        .SocialNetworks {
+          display: flex;
+          flex-direction: row;
+          column-gap: 20px;
+
+          .SocialNetwork {}
+        }
+      }
+    }
+  }
+
+  .Content {
+    margin-top: 20px + 26px * 2;
+  }
+
+  .Footer {
+    flex-direction: column;
+    padding: 3.5rem 0;
+    row-gap: 3rem;
+  }
+}
