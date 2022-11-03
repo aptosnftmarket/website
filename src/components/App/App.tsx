@@ -157,10 +157,10 @@ export function App(): JSX.Element {
       </main>
       <footer className={styles.Footer}>
         <div className={styles.Policies}>
-          <a className={styles.Policy} href="#TODO">
+          <a className={styles.Policy} href="#">
             T&Cs
           </a>
-          <a className={styles.Policy} href="#TODO">
+          <a className={styles.Policy} href="#">
             Privacy Policy
           </a>
         </div>
