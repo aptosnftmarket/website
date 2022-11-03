@@ -10,17 +10,17 @@
   padding: 1.5rem 3rem;
   background-color: rgba(13, 16, 15, 0.3);
   backdrop-filter: blur(10px);
-  transition: padding 0.15s ease-in-out;
+  transition: padding 0.3s ease-in-out;
   z-index: 99;
 
   &.small {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 
     &:after {
       content: "";
       position: fixed;
-      top: 3.5rem;
+      top: 4rem;
     }
   }
 
@@ -33,7 +33,7 @@
     height: 2rem;
     background: #0D100F;
     background: linear-gradient(180deg, rgba(13, 16, 15, 0.5) 0%, transparent 100%);
-    transition: top 0.15s ease-in-out;
+    transition: top 0.3s ease-in-out;
   }
 
   .Logo {
