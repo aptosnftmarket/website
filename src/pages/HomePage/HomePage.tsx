@@ -1,17 +1,16 @@
 import classNames from 'classnames'
 import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 
+import { SocialNetworkLink } from '../../components/App/SocialNetworkLink'
+import { idoUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
 import { scrollTo } from '../../utils'
 import appPreview from './appPreview.jpeg'
 import styles from './HomePage.module.scss'
-import medium from './medium.svg'
 import nft2 from './nft2.png'
 import nft3 from './nft3.png'
 import nft4 from './nft4.png'
 import nft6 from './nft6.png'
-import telegram from './telegram.svg'
-import twitter from './twitter.svg'
 
 export function HomePage(): JSX.Element {
   const ref1 = useRef<HTMLDivElement>(null)
@@ -98,13 +97,19 @@ export function HomePage(): JSX.Element {
               Read{' '}
               <a
                 className={styles.AnftDocsLink}
-                href="https://medium.com/@AptosNFT_Market"
+                href={socialNetworksUrls.medium}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 here for more
               </a>
-              .<button className={classNames('_Button big', styles.GoToPublicSaleButton)}>Go to Public Sale</button>
+              .
+              <button
+                className={classNames('_Button big', styles.GoToPublicSaleButton)}
+                onClick={(): string => (window.location.href = idoUrl)}
+              >
+                Go to Public Sale
+              </button>
             </p>
           </div>
 
@@ -171,37 +176,19 @@ export function HomePage(): JSX.Element {
             <h2 className={classNames(styles.Title2, '_tac')}>Join our community </h2>
             <ul className={styles.CommunityLinks}>
               <li>
-                <a
-                  className={styles.CommunityLink}
-                  href="https://twitter.com/AptosNFT_Market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className={styles.CommunityLinkIcon} src={twitter} alt="Twitter" />
-                  Follow us on Twitter
-                </a>
+                <SocialNetworkLink className={styles.CommunityLink} name="twitter" type="white" size={80}>
+                  <span className={styles.CommunityLinkText}>Follow us on Twitter</span>
+                </SocialNetworkLink>
               </li>
               <li>
-                <a
-                  className={styles.CommunityLink}
-                  href="https://t.me/AptosNFT_Market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className={styles.CommunityLinkIcon} src={telegram} alt="Telegram" />
-                  Join the Telegram community
-                </a>
+                <SocialNetworkLink className={styles.CommunityLink} name="telegram" type="white" size={80}>
+                  <span className={styles.CommunityLinkText}>Join the Telegram community</span>
+                </SocialNetworkLink>
               </li>
               <li>
-                <a
-                  className={styles.CommunityLink}
-                  href="https://medium.com/@AptosNFT_Market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className={styles.CommunityLinkIcon} src={medium} alt="Medium" />
-                  Follow us on Medium
-                </a>
+                <SocialNetworkLink className={styles.CommunityLink} name="medium" type="white" size={80}>
+                  <span className={styles.CommunityLinkText}>Follow us on Medium</span>
+                </SocialNetworkLink>
               </li>
             </ul>
           </div>

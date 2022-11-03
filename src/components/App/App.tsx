@@ -9,9 +9,7 @@ import { scrollTo } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
-import medium from './medium.svg'
-import telegram from './telegram.svg'
-import twitter from './twitter.svg'
+import { SocialNetworkLink } from './SocialNetworkLink'
 
 export function App(): JSX.Element {
   const [animate, setAnimate] = useState(false)
@@ -60,19 +58,13 @@ export function App(): JSX.Element {
         <div className={classNames(styles.RightSide, { [styles.animate]: animate })}>
           <ul className={styles.SocialNetworks}>
             <li>
-              <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={32} />
             </li>
             <li>
-              <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={32} />
             </li>
             <li>
-              <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={medium} alt="Medium" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
             </li>
           </ul>
           <button className="_Button">Open dApp (soon)</button>
@@ -147,19 +139,13 @@ export function App(): JSX.Element {
             <li>
               <ul className={styles.SocialNetworks}>
                 <li>
-                  <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
-                  </a>
+                  <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={32} />
                 </li>
                 <li>
-                  <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
-                  </a>
+                  <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={32} />
                 </li>
                 <li>
-                  <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                    <img className={styles.SocialNetwork} src={medium} alt="Medium" />
-                  </a>
+                  <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
                 </li>
               </ul>
             </li>
@@ -184,19 +170,13 @@ export function App(): JSX.Element {
           <p className={styles.Sign}>Built with ❤️️ & 🔥 on APTOS</p>
           <ul className={styles.SocialNetworks}>
             <li>
-              <a href="https://twitter.com/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={twitter} alt="Twitter" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={40} />
             </li>
             <li>
-              <a href="https://t.me/AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={telegram} alt="Telegram" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={40} />
             </li>
             <li>
-              <a href="https://medium.com/@AptosNFT_Market" target="_blank" rel="noopener noreferrer">
-                <img className={styles.SocialNetwork} src={medium} alt="Medium" />
-              </a>
+              <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={40} />
             </li>
           </ul>
         </div>
