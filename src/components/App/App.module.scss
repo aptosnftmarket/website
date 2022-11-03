@@ -42,9 +42,9 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
-    font-size: 20px;
-    font-weight: 700;
-    user-select: none;
+    height: 40px;
+    width: 180px;
+    background: url('./logo.svg') no-repeat center/cover;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.5s 0.75s ease, left 0.5s 1s ease;
@@ -217,6 +217,11 @@
     &:after {
       top: (20px + 26px * 2) !important;
       height: 2rem;
+    }
+
+    .Logo {
+      height: 29px;
+      width: 130px;
     }
 
     .HeaderLinks,
