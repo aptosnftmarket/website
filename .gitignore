@@ -10,6 +10,7 @@ dist-ssr
 *.local
 .env
 .npmrc
+.firebase
 
 npm-debug.log*
 yarn-debug.log*
