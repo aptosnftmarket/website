@@ -4,7 +4,7 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { SocialNetworkLink } from '../../components/App/SocialNetworkLink'
 import { idoUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
-import { scrollTo } from '../../utils'
+import { removeLocationHash, scrollTo } from '../../utils'
 import appPreview from './appPreview.png'
 import styles from './HomePage.module.scss'
 import nft2 from './nft2.png'
@@ -65,7 +65,9 @@ export function HomePage(): JSX.Element {
               <br />
               Building in stealth, launching soon!
             </p>
-            <button className={classNames(styles.OpenDapp, '_Button big')}>Open dApp (soon)</button>
+            <button className={classNames(styles.OpenDapp, '_Button big')} disabled>
+              Open dApp (soon)
+            </button>
           </div>
         </div>
       </div>
@@ -107,7 +109,6 @@ export function HomePage(): JSX.Element {
               <button
                 className={classNames('_Button big', styles.GoToPublicSaleButton)}
                 // onClick={(): string => (window.location.href = idoUrl)}
-                style={{ opacity: 0.5 }}
                 disabled
               >
                 Go to Public Sale
@@ -124,7 +125,10 @@ export function HomePage(): JSX.Element {
               <a
                 className={styles.LitepaperLink}
                 href="#SOON"
-                onClick={(event: MouseEvent): void => event.preventDefault()}
+                onClick={(event: MouseEvent): void => {
+                  event.preventDefault()
+                  removeLocationHash()
+                }}
               >
                 litepaper
               </a>{' '}

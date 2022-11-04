@@ -8,7 +8,7 @@ export function scrollTo(elementId: string, event?: MouseEvent): void {
   history.pushState({}, '', `#${elementId}`)
 }
 
-export function scrollToElement(elementId: string, offset = 0): void {
+function scrollToElement(elementId: string, offset = 0): void {
   const element = document.getElementById(elementId)
 
   if (element) {

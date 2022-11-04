@@ -5,7 +5,7 @@ import { MouseEvent, useEffect, useState } from 'react'
 
 import { useOnWindowScroll } from '../../hooks'
 import { HomePage } from '../../pages'
-import { scrollTo } from '../../utils'
+import { removeLocationHash, scrollTo } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
@@ -50,7 +50,14 @@ export function App(): JSX.Element {
             </a>
           </li>
           <li>
-            <a className={styles.HeaderLink} href="#SOON" onClick={(event: MouseEvent): void => event.preventDefault()}>
+            <a
+              className={styles.HeaderLink}
+              href="#SOON"
+              onClick={(event: MouseEvent): void => {
+                event.preventDefault()
+                removeLocationHash()
+              }}
+            >
               Litepaper (Soon)
             </a>
           </li>
@@ -67,7 +74,9 @@ export function App(): JSX.Element {
               <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
             </li>
           </ul>
-          <button className="_Button">Open dApp (soon)</button>
+          <button className="_Button" disabled>
+            Open dApp (soon)
+          </button>
         </div>
         <div className={classNames(styles.MobileMenu, { [styles.animate]: animate })}>
           <div
@@ -97,7 +106,9 @@ export function App(): JSX.Element {
           </div>
           <ul className={classNames(styles.MobileMenuContent, { [styles.active]: isMobileMenuActive })}>
             <li>
-              <button className="_Button">Open dApp (soon)</button>
+              <button className="_Button" disabled>
+                Open dApp (soon)
+              </button>
             </li>
             <li>
               <ul className={styles.HeaderLinks}>
@@ -129,7 +140,10 @@ export function App(): JSX.Element {
                   <a
                     className={styles.HeaderLink}
                     href="#SOON"
-                    onClick={(event: MouseEvent): void => event.preventDefault()}
+                    onClick={(event: MouseEvent): void => {
+                      event.preventDefault()
+                      removeLocationHash()
+                    }}
                   >
                     Litepaper (Soon)
                   </a>
