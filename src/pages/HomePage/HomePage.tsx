@@ -106,7 +106,9 @@ export function HomePage(): JSX.Element {
               .
               <button
                 className={classNames('_Button big', styles.GoToPublicSaleButton)}
-                onClick={(): string => (window.location.href = idoUrl)}
+                // onClick={(): string => (window.location.href = idoUrl)}
+                style={{ opacity: 0.5 }}
+                disabled
               >
                 Go to Public Sale
               </button>

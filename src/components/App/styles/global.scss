@@ -145,6 +145,18 @@ hr {
     border-radius: 10px;
     line-height: 48px;
   }
+
+  &[disabled] {
+    border-color: #F5F5F5;
+    background-color: #00C38B;
+    opacity: 0.6 !important;
+    cursor: not-allowed;
+
+    &:active {
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
