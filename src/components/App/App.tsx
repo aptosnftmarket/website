@@ -51,7 +51,7 @@ export function App(): JSX.Element {
           </li>
           <li>
             <a
-              className={styles.HeaderLink}
+              className={classNames(styles.HeaderLink, '_disabled')}
               href="#SOON"
               onClick={(event: MouseEvent): void => {
                 event.preventDefault()
@@ -138,7 +138,7 @@ export function App(): JSX.Element {
                 </li>
                 <li>
                   <a
-                    className={styles.HeaderLink}
+                    className={classNames(styles.HeaderLink, '_disabled')}
                     href="#SOON"
                     onClick={(event: MouseEvent): void => {
                       event.preventDefault()
@@ -171,10 +171,24 @@ export function App(): JSX.Element {
       </main>
       <footer className={styles.Footer}>
         <div className={styles.Policies}>
-          <a className={styles.Policy} href="#">
+          <a
+            className={classNames(styles.Policy, '_disabled')}
+            href="#SOON"
+            onClick={(event: MouseEvent): void => {
+              event.preventDefault()
+              removeLocationHash()
+            }}
+          >
             T&Cs
           </a>
-          <a className={styles.Policy} href="#">
+          <a
+            className={classNames(styles.Policy, '_disabled')}
+            href="#SOON"
+            onClick={(event: MouseEvent): void => {
+              event.preventDefault()
+              removeLocationHash()
+            }}
+          >
             Privacy Policy
           </a>
         </div>

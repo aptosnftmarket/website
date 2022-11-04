@@ -123,7 +123,7 @@ export function HomePage(): JSX.Element {
             <p className={styles.RoadmapDescription}>
               Our high level roadmap. Read more in{' '}
               <a
-                className={styles.LitepaperLink}
+                className={classNames(styles.LitepaperLink, '_disabled')}
                 href="#SOON"
                 onClick={(event: MouseEvent): void => {
                   event.preventDefault()
