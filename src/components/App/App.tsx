@@ -200,6 +200,7 @@ export function App(): JSX.Element {
             onClick={(event: MouseEvent): void => {
               event.preventDefault()
               navigate('/terms')
+              window.scrollTo({ top: 0 })
             }}
           >
             T&Cs
@@ -210,6 +211,7 @@ export function App(): JSX.Element {
             onClick={(event: MouseEvent): void => {
               event.preventDefault()
               navigate('/privacy')
+              window.scrollTo({ top: 0 })
             }}
           >
             Privacy Policy
