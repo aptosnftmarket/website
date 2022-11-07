@@ -624,29 +624,10 @@ export function PrivacyPage(): JSX.Element {
             responsible for, the privacy practices or content of such other websites or applications. Providing personal
             information to third-party websites or applications is at your own risk.
           </p>
-          <p>
-            Supervisory Authority. If your personal information is subject to the applicable data protection laws of the
-            European Economic Area, Switzerland, or the United Kingdom, you have the right to lodge a complaint with the
-            competent supervisory authority if you believe our processing of your personal information violates
-            applicable law.
-          </p>
-          <ul className={styles.ListAbc}>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                EEA Data Protection Authorities (DPAs)
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Swiss Federal Data Protection and Information Commissioner (FDPIC)
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                UK Information Commissioner’s Office (ICO)
-              </a>
-            </li>
-          </ul>
+          Supervisory Authority. If your personal information is subject to the applicable data protection laws of the
+          European Economic Area, Switzerland, or the United Kingdom, you have the right to lodge a complaint with the
+          competent supervisory authority if you believe our processing of your personal information violates applicable
+          law.
         </li>
         <li>
           <h2>13. CONTACT US</h2>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-let timeoutId = 0
+let timeoutId: NodeJS.Timeout
 
 export function useOnWindowScroll(onWindowScroll: () => void, debounce = 50): void {
   useEffect(() => {

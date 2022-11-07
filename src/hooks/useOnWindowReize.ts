@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-let timeoutId = 0
+let timeoutId: NodeJS.Timeout
 
 export function useOnWindowReize(onWindowResize: () => void, debounce = 250): void {
   useEffect(() => {
