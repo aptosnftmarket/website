@@ -2,19 +2,21 @@ import './styles/index.scss'
 
 import classNames from 'classnames'
 import { MouseEvent, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { useOnWindowScroll } from '../../hooks'
-import { HomePage } from '../../pages'
 import { removeLocationHash, scrollTo } from '../../utils'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
+import { Router } from './Router'
 import { SocialNetworkLink } from './SocialNetworkLink'
 
 export function App(): JSX.Element {
   const [animate, setAnimate] = useState(false)
   const [isHeaderSmall, setIsHeaderSmall] = useState(false)
   const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
+  const navigate = useNavigate()
 
   useOnWindowScroll(() => setIsHeaderSmall(window.scrollY > 64))
 
@@ -33,19 +35,36 @@ export function App(): JSX.Element {
       >
         <div
           className={classNames(styles.Logo, { [styles.animate]: animate })}
-          onClick={(): void => {
+          onClick={(event): void => {
+            event.preventDefault()
+            navigate('/')
             window.scrollTo({ top: 0, behavior: 'smooth' })
-            setTimeout(() => (window.location.hash = ''), 100)
           }}
         />
         <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
           <li>
-            <a className={styles.HeaderLink} href="#sale" onClick={(event): void => scrollTo('sale', event)}>
+            <a
+              className={styles.HeaderLink}
+              href="#sale"
+              onClick={(event): void => {
+                event.preventDefault()
+                navigate('/')
+                scrollTo('sale', event)
+              }}
+            >
               Public Sale
             </a>
           </li>
           <li>
-            <a className={styles.HeaderLink} href="#roadmap" onClick={(event): void => scrollTo('roadmap', event)}>
+            <a
+              className={styles.HeaderLink}
+              href="#roadmap"
+              onClick={(event): void => {
+                event.preventDefault()
+                navigate('/')
+                scrollTo('roadmap', event)
+              }}
+            >
               Roadmap
             </a>
           </li>
@@ -117,6 +136,8 @@ export function App(): JSX.Element {
                     className={styles.HeaderLink}
                     href="#sale"
                     onClick={(event): void => {
+                      event.preventDefault()
+                      navigate('/')
                       scrollTo('sale', event)
                       setIsMobileMenuActive(false)
                     }}
@@ -129,6 +150,8 @@ export function App(): JSX.Element {
                     className={styles.HeaderLink}
                     href="#roadmap"
                     onClick={(event): void => {
+                      event.preventDefault()
+                      navigate('/')
                       scrollTo('roadmap', event)
                       setIsMobileMenuActive(false)
                     }}
@@ -167,26 +190,26 @@ export function App(): JSX.Element {
         </div>
       </header>
       <main className={styles.Content}>
-        <HomePage />
+        <Router />
       </main>
       <footer className={styles.Footer}>
         <div className={styles.Policies}>
           <a
-            className={classNames(styles.Policy, '_disabled')}
-            href="#SOON"
+            className={classNames(styles.Policy)}
+            href="/terms"
             onClick={(event: MouseEvent): void => {
               event.preventDefault()
-              removeLocationHash()
+              navigate('/terms')
             }}
           >
             T&Cs
           </a>
           <a
-            className={classNames(styles.Policy, '_disabled')}
-            href="#SOON"
+            className={classNames(styles.Policy)}
+            href="/privacy"
             onClick={(event: MouseEvent): void => {
               event.preventDefault()
-              removeLocationHash()
+              navigate('/privacy')
             }}
           >
             Privacy Policy

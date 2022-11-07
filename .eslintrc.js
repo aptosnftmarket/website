@@ -8,9 +8,9 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:react-hooks/recommended'
   ],
   parser: '@typescript-eslint/parser', // Uses babel-eslint transforms.
   parserOptions: {
@@ -51,7 +51,6 @@ module.exports = {
     'react/no-unescaped-entities': 'warn',
     'react/react-in-jsx-scope': 'off',
     'sort-imports': ['warn', { ignoreCase: false, ignoreDeclarationSort: true, ignoreMemberSort: false }]
-    // 'jest/no-deprecated-functions': 'off'
   },
   overrides: [
     {
@@ -71,12 +70,6 @@ module.exports = {
       rules: {
         // '@typescript-eslint/no-array-constructor': 'warn',
         // 'no-array-constructor': 'off'
-      }
-    },
-    {
-      files: ['src/**/*.stories.tsx'],
-      rules: {
-        'import/no-default-export': 'off'
       }
     }
   ]
