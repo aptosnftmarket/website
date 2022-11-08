@@ -78,7 +78,7 @@ export function App(): JSX.Element {
                 removeLocationHash()
               }}
             >
-              Litepaper (Soon)
+              Litepaper<span className={styles.Soon}>Soon</span>
             </a>
           </li>
         </ul>
@@ -173,7 +173,7 @@ export function App(): JSX.Element {
                       removeLocationHash()
                     }}
                   >
-                    Litepaper (Soon)
+                    Litepaper<span className={styles.Soon}>Soon</span>
                   </a>
                 </li>
               </ul>

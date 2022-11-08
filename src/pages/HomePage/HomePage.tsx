@@ -136,9 +136,9 @@ export function HomePage(): JSX.Element {
                   removeLocationHash()
                 }}
               >
-                litepaper
-              </a>{' '}
-              (Soon).
+                litepaper<span className={styles.Soon}>Soon</span>
+              </a>
+              .
             </p>
             <ul className={styles.RoadmapList}>
               <li>
