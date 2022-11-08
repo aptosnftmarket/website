@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 
-import { SocialNetworkLink } from '../../components/App/SocialNetworkLink'
+import { SocialNetworkLink, Tooltip } from '../../components'
 import { idoUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
 import { removeLocationHash, scrollTo } from '../../utils'
@@ -65,9 +65,11 @@ export function HomePage(): JSX.Element {
               <br />
               Building in stealth, launching soon!
             </p>
-            <button className={classNames(styles.OpenDapp, '_Button big')} disabled>
-              Open dApp (soon)
-            </button>
+            <Tooltip text="Coming soon">
+              <button className={classNames(styles.OpenDapp, '_Button big')} disabled>
+                Open dApp
+              </button>
+            </Tooltip>
           </div>
         </div>
       </div>
@@ -106,13 +108,17 @@ export function HomePage(): JSX.Element {
                 here for more
               </a>
               .
-              <button
-                className={classNames('_Button big', styles.GoToPublicSaleButton)}
-                // onClick={(): string => (window.location.href = idoUrl)}
-                disabled
-              >
-                Go to Public Sale
-              </button>
+              <div className="_df">
+                <Tooltip text="Coming soon">
+                  <button
+                    className={classNames('_Button big', styles.GoToPublicSaleButton)}
+                    // onClick={(): string => (window.location.href = idoUrl)}
+                    disabled
+                  >
+                    Go to Public Sale
+                  </button>
+                </Tooltip>
+              </div>
             </p>
           </div>
 

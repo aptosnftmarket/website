@@ -1,13 +1,9 @@
 import { Page } from '~/components'
 import classNames from 'classnames'
-import { MouseEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import styles from './TermsPage.module.scss'
 
 export function PrivacyPage(): JSX.Element {
-  const navigate = useNavigate()
-
   return (
     <Page className={styles.TermsPage} title="Privacy Policy">
       <div className={styles.LastUpdated}>Last updated: 01/11/2022</div>

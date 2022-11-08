@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { PropsWithChildren } from 'react'
 
-import { SocialNetworkName, socialNetworksUrls } from '../../config'
+import { SocialNetworkName, socialNetworksUrls } from '../config'
 import styles from './SocialNetworkLink.module.scss'
 
 interface SocialNetworkLinkProps extends PropsWithChildren {

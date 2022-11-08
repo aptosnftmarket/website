@@ -1,0 +1,46 @@
+.Tooltip {
+  cursor: pointer;
+
+  &:global(._hover) {
+    .Container {
+      display: block;
+    }
+
+    :global(.__react_component_tooltip) {
+      visibility: visible;
+    }
+  }
+
+  .Container {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .Content {
+    padding: 0.5rem !important;
+    border-radius: 0.25rem;
+    background-color: #f5f5f5 !important;
+    color: #0d100f !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 1 !important;
+    z-index: 5;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      border-top-color: #f5f5f5 !important;
+      border-bottom-color: #f5f5f5 !important;
+      background-color: #f5f5f5 !important;
+    }
+
+    .ContentArray {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

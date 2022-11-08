@@ -151,13 +151,18 @@ hr {
   }
 
   &[disabled] {
-    border-color: #F5F5F5;
-    background-color: #00C38B;
-    cursor: not-allowed;
+    border-color: #094535 !important; // "!important" because of ui-kit
+    background-color: #094535 !important;
+    color: #696d6b;
 
     &:active {
       top: 0;
       left: 0;
+    }
+
+    &:hover {
+      border-color: #094535 !important; // "!important" because of ui-kit
+      background-color: #094535 !important;
     }
   }
 }

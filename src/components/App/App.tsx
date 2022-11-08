@@ -6,11 +6,12 @@ import { useNavigate } from 'react-router-dom'
 
 import { useOnWindowScroll } from '../../hooks'
 import { removeLocationHash, scrollTo } from '../../utils'
+import { SocialNetworkLink } from '../SocialNetworkLink'
+import { Tooltip } from '../Tooltip'
 import styles from './App.module.scss'
 import aptos from './aptos.svg'
 import { Background } from './Background'
 import { Router } from './Router'
-import { SocialNetworkLink } from './SocialNetworkLink'
 
 export function App(): JSX.Element {
   const [animate, setAnimate] = useState(false)
@@ -93,9 +94,11 @@ export function App(): JSX.Element {
               <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
             </li>
           </ul>
-          <button className="_Button" disabled>
-            Open dApp (soon)
-          </button>
+          <Tooltip text="Coming soon">
+            <button className="_Button" disabled>
+              Open dApp
+            </button>
+          </Tooltip>
         </div>
         <div className={classNames(styles.MobileMenu, { [styles.animate]: animate })}>
           <div
@@ -125,9 +128,11 @@ export function App(): JSX.Element {
           </div>
           <ul className={classNames(styles.MobileMenuContent, { [styles.active]: isMobileMenuActive })}>
             <li>
-              <button className="_Button" disabled>
-                Open dApp (soon)
-              </button>
+              <Tooltip text="Coming soon">
+                <button className="_Button" disabled>
+                  Open dApp
+                </button>
+              </Tooltip>
             </li>
             <li>
               <ul className={styles.HeaderLinks}>
