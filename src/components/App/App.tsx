@@ -71,14 +71,12 @@ export function App(): JSX.Element {
           </li>
           <li>
             <a
-              className={classNames(styles.HeaderLink, '_disabled')}
-              href="#SOON"
-              onClick={(event: MouseEvent): void => {
-                event.preventDefault()
-                removeLocationHash()
-              }}
+              className={styles.HeaderLink}
+              href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Litepaper<span className={styles.Soon}>Soon</span>
+              Litepaper
             </a>
           </li>
         </ul>
@@ -167,13 +165,11 @@ export function App(): JSX.Element {
                 <li>
                   <a
                     className={classNames(styles.HeaderLink, '_disabled')}
-                    href="#SOON"
-                    onClick={(event: MouseEvent): void => {
-                      event.preventDefault()
-                      removeLocationHash()
-                    }}
+                    href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Litepaper<span className={styles.Soon}>Soon</span>
+                    Litepaper
                   </a>
                 </li>
               </ul>

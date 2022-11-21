@@ -129,14 +129,12 @@ export function HomePage(): JSX.Element {
             <p className={styles.RoadmapDescription}>
               Our high level roadmap. Read more in{' '}
               <a
-                className={classNames(styles.LitepaperLink, '_disabled')}
-                href="#SOON"
-                onClick={(event: MouseEvent): void => {
-                  event.preventDefault()
-                  removeLocationHash()
-                }}
+                className={styles.LitepaperLink}
+                href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                litepaper<span className={styles.Soon}>Soon</span>
+                litepaper
               </a>
               .
             </p>
