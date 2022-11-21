@@ -4,8 +4,9 @@ import classNames from 'classnames'
 import { MouseEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { litepaperUrl } from '../../config/links'
 import { useOnWindowScroll } from '../../hooks'
-import { removeLocationHash, scrollTo } from '../../utils'
+import { scrollTo } from '../../utils'
 import { SocialNetworkLink } from '../SocialNetworkLink'
 import { Tooltip } from '../Tooltip'
 import styles from './App.module.scss'
@@ -70,12 +71,7 @@ export function App(): JSX.Element {
             </a>
           </li>
           <li>
-            <a
-              className={styles.HeaderLink}
-              href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className={styles.HeaderLink} href={litepaperUrl} target="_blank" rel="noopener noreferrer">
               Litepaper
             </a>
           </li>
@@ -165,7 +161,7 @@ export function App(): JSX.Element {
                 <li>
                   <a
                     className={classNames(styles.HeaderLink, '_disabled')}
-                    href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
+                    href={litepaperUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

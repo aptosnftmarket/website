@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { SocialNetworkLink, Tooltip } from '../../components'
-import { idoUrl, socialNetworksUrls } from '../../config'
+import { litepaperUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
-import { removeLocationHash, scrollTo } from '../../utils'
+import { scrollTo } from '../../utils'
 import appPreview from './appPreview.png'
 import styles from './HomePage.module.scss'
 import nft2 from './nft2.png'
@@ -128,12 +128,7 @@ export function HomePage(): JSX.Element {
             <h2 className={classNames(styles.Title2, '_tac')}>Roadmap</h2>
             <p className={styles.RoadmapDescription}>
               Our high level roadmap. Read more in{' '}
-              <a
-                className={styles.LitepaperLink}
-                href="https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className={styles.LitepaperLink} href={litepaperUrl} target="_blank" rel="noopener noreferrer">
                 litepaper
               </a>
               .
