@@ -77,17 +77,7 @@ export function App(): JSX.Element {
           </li>
         </ul>
         <div className={classNames(styles.RightSide, { [styles.animate]: animate })}>
-          <ul className={styles.SocialNetworks}>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={32} />
-            </li>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={32} />
-            </li>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
-            </li>
-          </ul>
+          <ul className={styles.SocialNetworks}>{getSocialNetworkLinks(32)}</ul>
           <Tooltip text="Coming soon">
             <button className="_Button" disabled>
               Open dApp
@@ -171,17 +161,7 @@ export function App(): JSX.Element {
               </ul>
             </li>
             <li>
-              <ul className={styles.SocialNetworks}>
-                <li>
-                  <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={32} />
-                </li>
-                <li>
-                  <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={32} />
-                </li>
-                <li>
-                  <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={32} />
-                </li>
-              </ul>
+              <ul className={styles.SocialNetworks}>{getSocialNetworkLinks(32)}</ul>
             </li>
           </ul>
         </div>
@@ -218,21 +198,63 @@ export function App(): JSX.Element {
         <div className={styles.CenterPart}>
           <img src={aptos} alt="Build for Aptos" />
           <p className={styles.Sign}>Built with ❤️️ & 🔥 on APTOS</p>
-          <ul className={styles.SocialNetworks}>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="twitter" type="transparent" size={40} />
-            </li>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="telegram" type="transparent" size={40} />
-            </li>
-            <li>
-              <SocialNetworkLink className={styles.SocialNetwork} name="medium" type="transparent" size={40} />
-            </li>
-          </ul>
+          <ul className={styles.SocialNetworks}>{getSocialNetworkLinks(40)}</ul>
         </div>
 
         <div>© Copyright AptosNFT.Market 2022</div>
       </footer>
+    </>
+  )
+}
+
+function getSocialNetworkLinks(size: number): JSX.Element {
+  return (
+    <>
+      <li>
+        <SocialNetworkLink
+          className={styles.SocialNetwork}
+          name="twitter"
+          type="transparent"
+          size={size}
+          viewBoxSize={32}
+        />
+      </li>
+      <li>
+        <SocialNetworkLink
+          className={styles.SocialNetwork}
+          name="telegram"
+          type="transparent"
+          size={size}
+          viewBoxSize={32}
+        />
+      </li>
+      <li>
+        <SocialNetworkLink
+          className={styles.SocialNetwork}
+          name="medium"
+          type="transparent"
+          size={size}
+          viewBoxSize={32}
+        />
+      </li>
+      <li>
+        <SocialNetworkLink
+          className={styles.SocialNetwork}
+          name="discord"
+          type="transparent"
+          size={size}
+          viewBoxSize={40}
+        />
+      </li>
+      <li>
+        <SocialNetworkLink
+          className={styles.SocialNetwork}
+          name="gitbook"
+          type="transparent"
+          size={size}
+          viewBoxSize={40}
+        />
+      </li>
     </>
   )
 }
