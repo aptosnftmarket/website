@@ -35,54 +35,56 @@ export function App(): JSX.Element {
           [styles.small]: isHeaderSmall
         })}
       >
-        <div
-          className={classNames(styles.Logo, { [styles.animate]: animate })}
-          onClick={(event): void => {
-            event.preventDefault()
-            navigate('/')
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        />
-        <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
-          <li>
-            <a
-              className={styles.HeaderLink}
-              href="#sale"
-              onClick={(event): void => {
-                event.preventDefault()
-                navigate('/')
-                scrollTo('sale', event)
-              }}
-            >
-              Public Sale
-            </a>
-          </li>
-          <li>
-            <a
-              className={styles.HeaderLink}
-              href="#roadmap"
-              onClick={(event): void => {
-                event.preventDefault()
-                navigate('/')
-                scrollTo('roadmap', event)
-              }}
-            >
-              Roadmap
-            </a>
-          </li>
-          <li>
-            <a className={styles.HeaderLink} href={litepaperUrl} target="_blank" rel="noopener noreferrer">
-              Litepaper
-            </a>
-          </li>
-        </ul>
-        <div className={classNames(styles.RightSide, { [styles.animate]: animate })}>
-          <ul className={styles.SocialNetworks}>{getSocialNetworkLinks(32)}</ul>
-          <Tooltip text="Coming soon">
-            <button className="_Button" disabled>
-              Open dApp
-            </button>
-          </Tooltip>
+        <div className={styles.Container}>
+          <div
+            className={classNames(styles.Logo, { [styles.animate]: animate })}
+            onClick={(event): void => {
+              event.preventDefault()
+              navigate('/')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          />
+          <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
+            <li>
+              <a
+                className={styles.HeaderLink}
+                href="#sale"
+                onClick={(event): void => {
+                  event.preventDefault()
+                  navigate('/')
+                  scrollTo('sale', event)
+                }}
+              >
+                Public Sale
+              </a>
+            </li>
+            <li>
+              <a
+                className={styles.HeaderLink}
+                href="#roadmap"
+                onClick={(event): void => {
+                  event.preventDefault()
+                  navigate('/')
+                  scrollTo('roadmap', event)
+                }}
+              >
+                Roadmap
+              </a>
+            </li>
+            <li>
+              <a className={styles.HeaderLink} href={litepaperUrl} target="_blank" rel="noopener noreferrer">
+                Litepaper
+              </a>
+            </li>
+          </ul>
+          <div className={classNames(styles.RightSide, { [styles.animate]: animate })}>
+            <ul className={styles.SocialNetworks}>{getSocialNetworkLinks(32)}</ul>
+            <Tooltip text="Coming soon">
+              <button className="_Button" disabled>
+                Open dApp
+              </button>
+            </Tooltip>
+          </div>
         </div>
         <div className={classNames(styles.MobileMenu, { [styles.animate]: animate })}>
           <div
@@ -149,12 +151,7 @@ export function App(): JSX.Element {
                   </a>
                 </li>
                 <li>
-                  <a
-                    className={classNames(styles.HeaderLink, '_disabled')}
-                    href={litepaperUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a className={styles.HeaderLink} href={litepaperUrl} target="_blank" rel="noopener noreferrer">
                     Litepaper
                   </a>
                 </li>

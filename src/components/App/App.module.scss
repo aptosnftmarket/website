@@ -1,9 +1,6 @@
 .Header {
   box-sizing: border-box;
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   top: 0;
   right: 0;
   width: 100%;
@@ -36,96 +33,104 @@
     transition: top 0.3s ease-in-out;
   }
 
-  .Logo {
+  .Container {
     position: relative;
-    left: -500px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 10px;
-    height: 40px;
-    width: 180px;
-    background: url('./logo.svg') no-repeat center/cover;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.5s 0.75s ease, left 0.5s 1s ease;
 
-    &.animate {
-      left: 0;
-      opacity: 1;
-    }
-  }
-
-  .HeaderLinks {
-    position: relative;
-    top: -100px;
-    display: flex;
-    column-gap: 2rem;
-    opacity: 0;
-    transition: opacity 0.5s 0.75s ease, top 0.5s 1s ease;
-
-    &.animate {
-      top: 0;
-      opacity: 1;
-    }
-
-    .HeaderLink {
+    .Logo {
+      position: relative;
+      left: -500px;
       display: flex;
-      align-items: flex-start;
-      font-weight: 500;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      color: #f5f5f5;
-      transition: color 0.25s ease;
+      align-items: center;
+      column-gap: 10px;
+      height: 40px;
+      width: 180px;
+      background: url('./logo.svg') no-repeat center/cover;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.5s 0.75s ease, left 0.5s 1s ease;
 
-      &:hover {
-        color: #0aa77a;
-      }
-
-      &:global(._disabled) {
-        color: #f5f5f5;
+      &.animate {
+        left: 0;
+        opacity: 1;
       }
     }
-  }
 
-  .RightSide {
-    position: relative;
-    right: -500px;
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s 0.75s ease, right 0.5s 1s ease;
-
-    &.animate {
-      right: 0;
-      opacity: 1;
-    }
-
-    .SocialNetworks {
+    .HeaderLinks {
+      position: absolute;
+      top: -100px;
+      left: calc(50% - 308px / 2);
       display: flex;
-      margin-right: 2rem;
+      column-gap: 2rem;
+      opacity: 0;
+      transition: opacity 0.5s 0.75s ease, top 0.5s 1s ease;
 
-      li {
-        &:last-child {
-          .SocialNetwork {
-            margin-right: 0;
-          }
-        }
+      &.animate {
+        top: 8px;
+        opacity: 1;
       }
 
-      .SocialNetwork {
-        width: 2rem;
-        margin-right: 0.75rem;
+      .HeaderLink {
+        display: flex;
+        align-items: flex-start;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+        text-decoration: none;
         color: #f5f5f5;
         transition: color 0.25s ease;
 
         &:hover {
-          color: #00c38b;
+          color: #0aa77a;
         }
 
-        &:active {
-          color: #0aa77a;
+        &:global(._disabled) {
+          color: #f5f5f5;
+        }
+      }
+    }
+
+    .RightSide {
+      position: relative;
+      right: -500px;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s 0.75s ease, right 0.5s 1s ease;
+
+      &.animate {
+        right: 0;
+        opacity: 1;
+      }
+
+      .SocialNetworks {
+        display: flex;
+        margin-right: 2rem;
+
+        li {
+          &:last-child {
+            .SocialNetwork {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .SocialNetwork {
+          width: 2rem;
+          margin-right: 0.75rem;
+          color: #f5f5f5;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: #00c38b;
+          }
+
+          &:active {
+            color: #0aa77a;
+          }
         }
       }
     }
@@ -155,6 +160,23 @@
     .MobileMenuContent {
       .HeaderLinks {
         .HeaderLink {
+          display: flex;
+          align-items: flex-start;
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          text-align: center;
+          text-decoration: none;
+          color: #f5f5f5;
+          transition: color 0.25s ease;
+
+          &:hover {
+            color: #0aa77a;
+          }
+
+          &:global(._disabled) {
+            color: #f5f5f5;
+          }
         }
       }
 
@@ -259,14 +281,16 @@
       height: 2rem;
     }
 
-    .Logo {
-      height: 29px;
-      width: 130px;
-    }
+    .Container {
+      .Logo {
+        height: 29px;
+        width: 130px;
+      }
 
-    .HeaderLinks,
-    .RightSide {
-      display: none;
+      .HeaderLinks,
+      .RightSide {
+        display: none;
+      }
     }
 
     .MobileMenu {
@@ -379,9 +403,6 @@
           display: flex;
           flex-direction: row;
           column-gap: 20px;
-
-          .SocialNetwork {
-          }
         }
       }
     }
