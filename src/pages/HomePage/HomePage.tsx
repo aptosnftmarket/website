@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { SocialNetworkLink, Tooltip } from '../../components'
+import { Slider, SocialNetworkLink, Tooltip } from '../../components'
 import { litepaperUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
 import { scrollTo } from '../../utils'
@@ -25,7 +25,7 @@ export function HomePage(): JSX.Element {
         const offset = ref1.current.offsetHeight - ref2.current.offsetHeight
         const desktopOffset = 64 + 12
         const mobileOffset = 48
-        const isMobile = screen.width <= 1200
+        const isMobile = window.innerWidth <= 1200
 
         setMargin(-(offset / 2) - (isMobile ? mobileOffset : desktopOffset))
       }
@@ -94,7 +94,7 @@ export function HomePage(): JSX.Element {
             <h2 className={classNames(styles.Title2, styles.SaleTitle)}>
               Public Sale for <span className="_TextAccent">Aptos</span> community
             </h2>
-            <p className={classNames(styles.Description2, styles.SaleDescription)}>
+            <div className={classNames(styles.Description2, styles.SaleDescription)}>
               We believe in community ownership and will be implementing Public Sale for AptosNFT.market token{' '}
               <span className="_TextAccent">ANFT</span> within the next weeks. Whitelist will be open shortly.
               <br />
@@ -119,7 +119,7 @@ export function HomePage(): JSX.Element {
                   </button>
                 </Tooltip>
               </div>
-            </p>
+            </div>
           </div>
 
           <hr />
@@ -178,7 +178,7 @@ export function HomePage(): JSX.Element {
           <hr />
 
           <div className={styles.CommunitySection}>
-            <h2 className={classNames(styles.Title2, '_tac')}>Join our community </h2>
+            <h2 className={classNames(styles.Title2, '_tac')}>Join our community</h2>
             <ul className={styles.CommunityLinks}>
               <li>
                 <SocialNetworkLink className={styles.CommunityLink} name="twitter" type="white" size={80}>
@@ -196,6 +196,13 @@ export function HomePage(): JSX.Element {
                 </SocialNetworkLink>
               </li>
             </ul>
+          </div>
+
+          <hr />
+
+          <div className={styles.OurPartnersSection}>
+            <h2 className={classNames(styles.Title2, '_tac _mb-8')}>Our Partners</h2>
+            <Slider />
           </div>
         </div>
       </div>
