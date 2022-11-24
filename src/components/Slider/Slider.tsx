@@ -17,7 +17,7 @@ import partnerStaderlabs from './partnerStaderlabs.svg'
 import styles from './Slider.module.scss'
 
 const slides = [
-  { name: 'Aptos Project', url: 'https://aptosfoundation.org/', src: partnerAptosfoundation },
+  { name: 'Aptos Foundation', url: 'https://aptosfoundation.org/', src: partnerAptosfoundation },
   { name: 'Stader Labs', url: 'https://staderlabs.com/', src: partnerStaderlabs },
   { name: 'Kana Labs', url: 'https://app.kanalabs.io/', src: partnerKanalabs },
   { name: 'Mira Finance', url: 'https://www.mirafinance.io/', src: partnerMirafinance },
