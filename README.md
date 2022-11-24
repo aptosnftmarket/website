@@ -1,6 +1,6 @@
-# aptosnft-website
+# website
 
-Landing page for [AptosNFT.Market app](https://github.com/onestaree/aptosnft-app)
+Landing page for [Aptos NFT Market IDO app](https://github.com/aptosnftmarket/ido-app): https://aptosnft.market
 
 ## Setup
 
