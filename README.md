@@ -2,6 +2,8 @@
 
 Landing page for [Aptos NFT Market IDO app](https://github.com/aptosnftmarket/ido-app): https://aptosnft.market
 
+![package status](https://github.com/aptosnftmarket/website/actions/workflows/firebase-hosting-merge.yml/badge.svg)
+
 ## Setup
 
 - `yarn` - install dependencies
