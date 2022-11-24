@@ -2,26 +2,26 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 
 import classNames from 'classnames'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { useOnWindowReize } from '~/hooks'
 
-import partnerAptosfoundation from './partnerAptosfoundation.png'
-import partnerAptoslaunch from './partnerAptoslaunch.svg'
-import partnerKanalabs from './partnerKanalabs.svg'
-import partnerMirafinance from './partnerMirafinance.png'
+import partnerAptosFoundation from './partnerAptosFoundation.png'
+import partnerAptosLaunch from './partnerAptosLaunch.png'
+import partnerKanaLabs from './partnerKanaLabs.svg'
+import partnerMiraFinance from './partnerMiraFinance.png'
 import partnerPontem from './partnerPontem.png'
-import partnerStaderlabs from './partnerStaderlabs.svg'
+import partnerStaderLabs from './partnerStaderLabs.svg'
 import styles from './Slider.module.scss'
 
 const slides = [
-  { name: 'Aptos Foundation', url: 'https://aptosfoundation.org/', src: partnerAptosfoundation },
-  { name: 'Stader Labs', url: 'https://staderlabs.com/', src: partnerStaderlabs },
-  { name: 'Kana Labs', url: 'https://app.kanalabs.io/', src: partnerKanalabs },
-  { name: 'Mira Finance', url: 'https://www.mirafinance.io/', src: partnerMirafinance },
-  { name: 'Aptos Launch', url: 'https://aptoslaunch.io/', src: partnerAptoslaunch },
+  { name: 'Aptos Foundation', url: 'https://aptosfoundation.org/', src: partnerAptosFoundation },
+  { name: 'Stader Labs', url: 'https://staderlabs.com/', src: partnerStaderLabs },
+  { name: 'Kana Labs', url: 'https://app.kanalabs.io/', src: partnerKanaLabs },
+  { name: 'Mira Finance', url: 'https://www.mirafinance.io/', src: partnerMiraFinance },
+  { name: 'Aptos Launch', url: 'https://aptoslaunch.io/', src: partnerAptosLaunch },
   { name: 'Pontem Network', url: 'https://pontem.network/', src: partnerPontem }
 ].map(({ name, url, src }, index) => {
   return (
@@ -37,41 +37,59 @@ interface SliderProps {
   className?: string
 }
 
+const maxWidth = 1280
+
 export function Slider({ className }: SliderProps): JSX.Element {
-  const [slidesPerView, setSlidesPerView] = useState(0)
+  const [isActive, setIsActive] = useState(window.innerWidth <= maxWidth)
+  const [key, setKey] = useState(0)
 
-  useOnWindowReize(
-    useCallback(() => {
-      const { length } = slides
-      const { innerWidth } = window
-
-      setSlidesPerView(
-        innerWidth <= 1200 ? (innerWidth <= 800 ? 1 : length - 3) : innerWidth <= 1365 ? length - 1 : length
-      )
-    }, [])
-  )
-
-  const isEnabled = slidesPerView < slides.length
+  useOnWindowReize(() => setIsActive(window.innerWidth <= maxWidth))
+  useEffect(() => setKey((currentKey) => currentKey++), [isActive])
 
   return (
-    <div className={classNames(styles.Slider, className)}>
-      {slidesPerView ? (
-        <Swiper
-          className={styles.Container}
-          autoplay={isEnabled ? { delay: 2000, disableOnInteraction: false } : undefined}
-          loop={isEnabled}
-          centeredSlides={isEnabled}
-          slidesPerView={slidesPerView}
-          spaceBetween={50}
-          modules={[Autoplay]}
-        >
-          {slides.map((slideContent, index) => (
-            <SwiperSlide key={index} className={styles.Slide}>
-              {slideContent}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : null}
+    <div key={key} className={classNames(styles.Slider, className)}>
+      <Swiper
+        className={styles.Container}
+        autoplay={isActive ? { delay: 2000, disableOnInteraction: false } : undefined}
+        loop={isActive}
+        modules={[Autoplay]}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 50
+          },
+          520: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          680: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40
+          },
+          1200: {
+            slidesPerView: 6,
+            spaceBetween: 50
+          },
+          [maxWidth]: {
+            slidesPerView: 6,
+            spaceBetween: 50
+          }
+        }}
+      >
+        {slides.map((slideContent, index) => (
+          <SwiperSlide key={index} className={styles.Slide}>
+            {slideContent}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   )
 }
