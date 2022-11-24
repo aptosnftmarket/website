@@ -77,10 +77,6 @@ export function Slider({ className }: SliderProps): JSX.Element {
           1200: {
             slidesPerView: 6,
             spaceBetween: 50
-          },
-          [maxWidth]: {
-            slidesPerView: 6,
-            spaceBetween: 50
           }
         }}
       >
