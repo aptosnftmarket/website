@@ -26,7 +26,12 @@ const slides = [
 ].map(({ name, url, src }, index) => {
   return (
     <a key={index} className={styles.SlideContent} href={url} target="_blank" rel="noopener noreferrer">
-      <img className={styles.SlideLogo} src={src} alt={name} />
+      <img
+        className={styles.SlideLogo}
+        style={src === partnerKanaLabs ? { marginInline: 13 } : {}}
+        src={src}
+        alt={name}
+      />
       <span className={styles.SlideTitle}>{name}</span>
     </a>
   )
@@ -76,7 +81,7 @@ export function Slider({ className }: SliderProps): JSX.Element {
           },
           1200: {
             slidesPerView: 6,
-            spaceBetween: 50
+            spaceBetween: 40
           }
         }}
       >
