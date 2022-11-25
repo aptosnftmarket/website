@@ -20,9 +20,9 @@ const slides = [
   { name: 'Aptos Foundation', url: 'https://aptosfoundation.org/', src: partnerAptosFoundation },
   { name: 'Stader Labs', url: 'https://staderlabs.com/', src: partnerStaderLabs },
   { name: 'Kana Labs', url: 'https://app.kanalabs.io/', src: partnerKanaLabs },
+  { name: 'Pontem Network', url: 'https://pontem.network/', src: partnerPontem },
   { name: 'Mira Finance', url: 'https://www.mirafinance.io/', src: partnerMiraFinance },
-  { name: 'Aptos Launch', url: 'https://aptoslaunch.io/', src: partnerAptosLaunch },
-  { name: 'Pontem Network', url: 'https://pontem.network/', src: partnerPontem }
+  { name: 'Aptos Launch', url: 'https://aptoslaunch.io/', src: partnerAptosLaunch }
 ].map(({ name, url, src }, index) => {
   return (
     <a key={index} className={styles.SlideContent} href={url} target="_blank" rel="noopener noreferrer">
