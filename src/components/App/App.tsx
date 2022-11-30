@@ -48,14 +48,14 @@ export function App(): JSX.Element {
             <li>
               <a
                 className={styles.HeaderLink}
-                href="#sale"
+                href="#presale"
                 onClick={(event): void => {
                   event.preventDefault()
                   navigate('/')
-                  scrollTo('sale', event)
+                  scrollTo('presale', event)
                 }}
               >
-                Public Sale
+                Presale
               </a>
             </li>
             <li>
@@ -125,15 +125,15 @@ export function App(): JSX.Element {
                 <li>
                   <a
                     className={styles.HeaderLink}
-                    href="#sale"
+                    href="#presale"
                     onClick={(event): void => {
                       event.preventDefault()
                       navigate('/')
-                      scrollTo('sale', event)
+                      scrollTo('presale', event)
                       setIsMobileMenuActive(false)
                     }}
                   >
-                    Public Sale
+                    Presale
                   </a>
                 </li>
                 <li>

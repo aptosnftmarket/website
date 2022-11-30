@@ -1,6 +1,7 @@
 export type SocialNetworkName = 'twitter' | 'telegram' | 'medium' | 'discord' | 'gitbook'
 
 export const litepaperUrl = 'https://medium.com/@AptosNFT_Market/aptosnft-market-litepaper-a9792d585d2b'
+export const presaleUrl = 'https://presale.aptosnft.market'
 
 export const socialNetworksUrls: Record<SocialNetworkName, string> = {
   twitter: 'https://twitter.com/AptosNFT_Market',

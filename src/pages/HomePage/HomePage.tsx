@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Slider, SocialNetworkLink, Tooltip } from '../../components'
-import { litepaperUrl, socialNetworksUrls } from '../../config'
+import { litepaperUrl, presaleUrl, socialNetworksUrls } from '../../config'
 import { useOnWindowReize } from '../../hooks'
 import { scrollTo } from '../../utils'
 import appPreview from './appPreview.png'
@@ -90,13 +90,13 @@ export function HomePage(): JSX.Element {
         <hr />
 
         <div className={styles.BackgroundFog}>
-          <div id="sale" className={styles.SaleSection}>
+          <div id="presale" className={styles.SaleSection}>
             <h2 className={classNames(styles.Title2, styles.SaleTitle)}>
-              Public Sale for <span className="_TextAccent">Aptos</span> community
+              Presale for <span className="_TextAccent">Aptos</span> community
             </h2>
             <div className={classNames(styles.Description2, styles.SaleDescription)}>
-              We believe in community ownership and will be implementing Public Sale for AptosNFT.market token{' '}
-              <span className="_TextAccent">ANFT</span> within the next weeks. Whitelist will be open shortly.
+              We believe in community ownership and will be implementing Presale for AptosNFT.market token{' '}
+              <span className="_TextAccent">ANFT</span> within the next weeks.
               <br />
               Read{' '}
               <a
@@ -112,10 +112,9 @@ export function HomePage(): JSX.Element {
                 <Tooltip text="Coming soon">
                   <button
                     className={classNames('_Button big', styles.GoToPublicSaleButton)}
-                    // onClick={(): string => (window.location.href = idoUrl)}
-                    disabled
+                    onClick={(): string => (window.location.href = presaleUrl)}
                   >
-                    Go to Public Sale
+                    Go to Presale
                   </button>
                 </Tooltip>
               </div>
