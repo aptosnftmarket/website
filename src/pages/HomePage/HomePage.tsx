@@ -109,14 +109,12 @@ export function HomePage(): JSX.Element {
               </a>
               .
               <div className="_df">
-                <Tooltip text="Coming soon">
-                  <button
-                    className={classNames('_Button big', styles.GoToPublicSaleButton)}
-                    onClick={(): string => (window.location.href = presaleUrl)}
-                  >
-                    Go to Presale
-                  </button>
-                </Tooltip>
+                <button
+                  className={classNames('_Button big', styles.GoToPublicSaleButton)}
+                  onClick={(): string => (window.location.href = presaleUrl)}
+                >
+                  Go to Presale
+                </button>
               </div>
             </div>
           </div>
