@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { MouseEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { litepaperUrl } from '../../config/links'
+import { litepaperUrl, presaleUrl } from '../../config/links'
 import { useOnWindowScroll } from '../../hooks'
 import { scrollTo } from '../../utils'
 import { SocialNetworkLink } from '../SocialNetworkLink'
@@ -46,15 +46,7 @@ export function App(): JSX.Element {
           />
           <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
             <li>
-              <a
-                className={styles.HeaderLink}
-                href="#presale"
-                onClick={(event): void => {
-                  event.preventDefault()
-                  navigate('/')
-                  scrollTo('presale', event)
-                }}
-              >
+              <a className={styles.HeaderLink} href={presaleUrl}>
                 Presale
               </a>
             </li>
@@ -123,16 +115,7 @@ export function App(): JSX.Element {
             <li>
               <ul className={styles.HeaderLinks}>
                 <li>
-                  <a
-                    className={styles.HeaderLink}
-                    href="#presale"
-                    onClick={(event): void => {
-                      event.preventDefault()
-                      navigate('/')
-                      scrollTo('presale', event)
-                      setIsMobileMenuActive(false)
-                    }}
-                  >
+                  <a className={styles.HeaderLink} href={presaleUrl}>
                     Presale
                   </a>
                 </li>

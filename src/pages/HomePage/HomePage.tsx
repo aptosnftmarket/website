@@ -95,19 +95,7 @@ export function HomePage(): JSX.Element {
               Presale for <span className="_TextAccent">Aptos</span> community
             </h2>
             <div className={classNames(styles.Description2, styles.SaleDescription)}>
-              We believe in community ownership and will be implementing Presale for AptosNFT.market token{' '}
-              <span className="_TextAccent">ANFT</span> within the next weeks.
-              <br />
-              Read{' '}
-              <a
-                className={styles.AnftDocsLink}
-                href={socialNetworksUrls.medium}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                here for more
-              </a>
-              .
+              We believe in community ownership. You can participate in the AptosNFT Market Presale now:
               <div className="_df">
                 <button
                   className={classNames('_Button big', styles.GoToPublicSaleButton)}
