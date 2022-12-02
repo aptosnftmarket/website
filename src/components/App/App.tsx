@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { MouseEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { litepaperUrl, presaleUrl } from '../../config/links'
+import { litepaperUrl } from '../../config/links'
 import { useOnWindowScroll } from '../../hooks'
 import { scrollTo } from '../../utils'
 import { SocialNetworkLink } from '../SocialNetworkLink'
@@ -45,11 +45,6 @@ export function App(): JSX.Element {
             }}
           />
           <ul className={classNames(styles.HeaderLinks, { [styles.animate]: animate })}>
-            <li>
-              <a className={styles.HeaderLink} href={presaleUrl}>
-                Presale
-              </a>
-            </li>
             <li>
               <a
                 className={styles.HeaderLink}
@@ -114,11 +109,6 @@ export function App(): JSX.Element {
             </li>
             <li>
               <ul className={styles.HeaderLinks}>
-                <li>
-                  <a className={styles.HeaderLink} href={presaleUrl}>
-                    Presale
-                  </a>
-                </li>
                 <li>
                   <a
                     className={styles.HeaderLink}

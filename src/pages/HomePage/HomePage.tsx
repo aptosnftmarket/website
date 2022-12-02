@@ -90,6 +90,7 @@ export function HomePage(): JSX.Element {
         <hr />
 
         <div className={styles.BackgroundFog}>
+          {/*
           <div id="presale" className={styles.SaleSection}>
             <h2 className={classNames(styles.Title2, styles.SaleTitle)}>
               Presale for <span className="_TextAccent">Aptos</span> community
@@ -108,6 +109,7 @@ export function HomePage(): JSX.Element {
           </div>
 
           <hr />
+          */}
 
           <div id="roadmap" className={styles.RoadmapSection}>
             <h2 className={classNames(styles.Title2, '_tac')}>Roadmap</h2>
