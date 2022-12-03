@@ -135,9 +135,10 @@ export function HomePage(): JSX.Element {
                 <ul className={styles.RoadmapSublist}>
                   <li>Developing tokenomics and litepaper</li>
                   <li>Partner with Aptos ecosystem projects</li>
-                  <li>IDO & TGE of token ANFT</li>
-                  <li>ANFT launch on DEXes and CEXes</li>
-                  <li>ANFT staking</li>
+                  {/*<li>IDO & TGE of token ANFT</li>*/}
+                  {/*<li>ANFT launch on DEXes and CEXes</li>*/}
+                  {/*<li>ANFT staking</li>*/}
+                  <li>Growing our community</li>
                   <li>Alpha AptosNFT.Market development</li>
                 </ul>
               </li>
@@ -147,6 +148,8 @@ export function HomePage(): JSX.Element {
                   <li>Alpha AptosNFT.Market launch</li>
                   <li>Smart Contracts audits</li>
                   <li>NFT Oracles Integrations</li>
+                  <li>ANFT token launch</li>
+                  <li>ANFT staking</li>
                   <li>Beta AptosNFT.Market development</li>
                 </ul>
               </li>
