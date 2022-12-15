@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "aptosnftmarket",
+    "site": "aptosnftmarket",
     "public": "dist",
     "cleanUrls": true,
     "trailingSlash": false,
