@@ -1,15 +1,5 @@
 {
   "projects": {
-    "default": "onestardev"
-  },
-  "targets": {
-    "onestardev": {
-      "hosting": {
-        "aptosnft-website": [
-          "aptosnft-website"
-        ]
-      }
-    }
-  },
-  "etags": {}
+    "default": "aptosnftmarket"
+  }
 }
